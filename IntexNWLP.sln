@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntexNWLP", "IntexNWLP\IntexNWLP.csproj", "{8AB3D76D-F307-4BF2-AE6E-F0F0589E56CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8AB3D76D-F307-4BF2-AE6E-F0F0589E56CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AB3D76D-F307-4BF2-AE6E-F0F0589E56CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AB3D76D-F307-4BF2-AE6E-F0F0589E56CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AB3D76D-F307-4BF2-AE6E-F0F0589E56CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D4ECEF2-BC35-4DC9-AAC6-03BA61F147B4}
+	EndGlobalSection
+EndGlobal
