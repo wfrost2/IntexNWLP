@@ -8,17 +8,18 @@ using System.Web;
 
 namespace IntexNWLP.Models
 {
-    [Table("Customer_Users")]
+    [Table("Customer_User")]
     public class Customer_Users
     {
+        [Key]
         public int customerUserId { get; set; }
         public string username { get; set; }
         public string password { get; set; }
         public DateTime createdAt { get; set; }
         public DateTime updatedAt { get; set; }
 
-        [ForeignKey("Customers")]
+        [ForeignKey("Customer")]
         public virtual int customerId { get; set; }
-        public virtual Customers Customers { get; set; }
+        public virtual Customer Customer { get; set; }
     }
 }

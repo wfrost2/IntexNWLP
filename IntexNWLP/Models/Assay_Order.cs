@@ -8,17 +8,20 @@ using System.Web;
 namespace IntexNWLP.Models
 {
 
-    [Table("Assay_Orders")]
-    public class Assay_Orders
+    [Table("Assay_Order")]
+    public class Assay_Order
     {
-        
-        [ForeignKey("Orders")]
+        [Key]
+        [Column(Order = 0)]
+        [ForeignKey("Order")]
         public virtual int orderId { get; set; }
-        public virtual Orders Orders { get; set; }
-
-        [ForeignKey("Assays")]
+        public virtual Order Order { get; set; }
+        
+        [Key]
+        [Column(Order = 1)]
+        [ForeignKey("Assay")]
         public virtual int assayId { get; set; }
-        public virtual Assays Assays { get; set; }
+        public virtual Assay Assay { get; set; }
 
     }
 }

@@ -1,0 +1,93 @@
+﻿@model IEnumerable<IntexNWLP.Models.Customer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee.employeeFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.customerFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.customerLastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.customerAddress1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.customerAddress2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.customerCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.customerState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.customerCountry)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.customerZip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.customerEmail)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.employeeFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.customerFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.customerLastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.customerAddress1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.customerAddress2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.customerCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.customerState)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.customerCountry)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.customerZip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.customerEmail)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.customerId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.customerId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.customerId })
+        </td>
+    </tr>
+}
+
+</table>

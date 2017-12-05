@@ -8,8 +8,8 @@ using System.Web;
 
 namespace IntexNWLP.Models
 {
-    [Table("Assays")]
-    public class Assays
+    [Table("Assay")]
+    public class Assay
     {
         [Key]
         public int assayId { get; set; }
@@ -18,8 +18,8 @@ namespace IntexNWLP.Models
         public int estNumDaysComplete { get; set; }
         public string assayDescription { get; set; }
 
-        [ForeignKey("Compounds")]
+        [ForeignKey("Compound")]
         public virtual int LTNumber { get; set; }
-        public virtual Compounds Compounds { get; set; }
+        public virtual Compound Compound { get; set; }
     }
 }

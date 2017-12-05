@@ -7,7 +7,7 @@ using System.Web;
 
 namespace IntexNWLP.Models
 {
-    [Table("Employee_Users")]
+    [Table("Employee_User")]
     public class Employee_Users
     {
         [Key]
@@ -15,9 +15,9 @@ namespace IntexNWLP.Models
         public string username { get; set; }
         public string password { get; set; }
         
-        [ForeignKey("Employees")]
+        [ForeignKey("Employee")]
         public virtual int employeeId { get; set; }
-        public virtual Employees Employees { get; set; }
+        public virtual Employee Employee { get; set; }
 
         public string createdAt { get; set; }
         public string updatedAt { get; set; }

@@ -7,12 +7,12 @@ using System.Web;
 
 namespace IntexNWLP.Models
 {
-    [Table("Tests")]
-    public class Tests
+    [Table("Role")]
+    public class Role
     {
         [Key]
-        public int testId { get; set; }
-        public string testName { get; set; }
-        public double quotedPrice { get; set; }
+        public int roleId { get; set; }
+        public string roleName { get; set; }
+        public string roleDescription { get; set; }
     }
 }

@@ -7,15 +7,15 @@ using System.Web;
 
 namespace IntexNWLP.Models
 {
-    [Table("Orders")]
-    public class Orders
+    [Table("Order")]
+    public class Order
     {
         [Key]
         public int orderId { get; set; }
 
-        [ForeignKey("Customers")]
+        [ForeignKey("Customer")]
         public virtual int customerId { get; set; }
-        public virtual Customers Customers { get; set; }
+        public virtual Customer Customer { get; set; }
         
         public double orderTotal { get; set; }
         public string orderDate { get; set; }

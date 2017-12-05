@@ -8,8 +8,8 @@ using System.Web;
 
 namespace IntexNWLP.Models
 {
-    [Table("Compound_Samples")]
-    public class Compound_Samples
+    [Table("Compound_Sample")]
+    public class Compound_Sample
     {
         [Key]
         public int compoundSampleId { get; set; }
@@ -24,8 +24,8 @@ namespace IntexNWLP.Models
         public double molecularMass { get; set; }
         public double maxToleratedDose { get; set; }
 
-        [ForeignKey("Compounds")]
+        [ForeignKey("Compound")]
         public virtual int LTNumber { get; set; }
-        public virtual Compounds Compounds { get; set; }
+        public virtual Compound Compound { get; set; }
     }
 }

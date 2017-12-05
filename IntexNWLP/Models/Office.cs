@@ -7,8 +7,8 @@ using System.Web;
 
 namespace IntexNWLP.Models
 {
-    [Table("Offices")]
-    public class Offices
+    [Table("Office")]
+    public class Office
     {
         [Key]
         public int officeId { get; set; }

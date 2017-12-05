@@ -14,28 +14,28 @@ namespace IntexNWLP.DAL
 
         }
 
-        public DbSet<Assay_Orders> Assay_Orders { get; set; }
-        public DbSet<Assay_Results> Assay_Results { get; set; }
-        public DbSet<Assay_Tests> Assay_Tests { get; set; }
-        public DbSet<Assays> Assays { get; set; }
-        public DbSet<Catalog_Subscriptions> Catalog_Subscriptions { get; set; }
+        public DbSet<Assay_Order> Assay_Order { get; set; }
+        public DbSet<Assay_Result> Assay_Result { get; set; }
+        public DbSet<Assay_Test> Assay_Test { get; set; }
+        public DbSet<Assay> Assay { get; set; }
+        public DbSet<Catalog_Subscription> Catalog_Subscription { get; set; }
         public DbSet<Catalog_Type> Catalog_Type { get; set; }
-        public DbSet<Compound_Samples> Compund_Samples { get; set; }
-        public DbSet<Compounds> Compounds { get; set; }
-        public DbSet<Customer_Users> Customer_Users { get; set; }
-        public DbSet<Customers> Customers { get; set; }
-        public DbSet<Employee_Users> Employee_Users { get; set; }
-        public DbSet<Employees> Employees { get; set; }
-        public DbSet<Materials> Materials { get; set; }
-        public DbSet<Materials_Tests> Materials_Tests { get; set; }
-        public DbSet<Offices> Offices { get; set; }
+        public DbSet<Compound_Sample> Compund_Sample { get; set; }
+        public DbSet<Compound> Compound { get; set; }
+        public DbSet<Customer_Users> Customer_User { get; set; }
+        public DbSet<Customer> Customer { get; set; }
+        public DbSet<Employee_Users> Employee_User { get; set; }
+        public DbSet<Employee> Employee { get; set; }
+        public DbSet<Material> Material { get; set; }
+        public DbSet<Material_Test> Material_Test { get; set; }
+        public DbSet<Office> Office { get; set; }
         public DbSet<Order_Invoice> Order_Invoice { get; set; }
         public DbSet<Order_Status> Order_Status { get; set; }
-        public DbSet<Orders> Orders { get; set; }
-        public DbSet<Roles> Roles { get; set; }
-        public DbSet<Sales> Sales { get; set; }
-        public DbSet<Test_Results> Test_Results { get; set; }
-        public DbSet<Tests> Tests { get; set; }
+        public DbSet<Order> Order { get; set; }
+        public DbSet<Role> Role { get; set; }
+        public DbSet<Sale> Sale { get; set; }
+        public DbSet<Test_Result> Test_Result { get; set; }
+        public DbSet<Test> Test { get; set; }
         public DbSet<TestTube> TestTube { get; set; }
 
     }
