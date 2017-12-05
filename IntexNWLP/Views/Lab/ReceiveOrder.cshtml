@@ -1,0 +1,25 @@
+﻿@model IEnumerable<IntexNWLP.Models.Order>
+
+@{
+    ViewBag.Title = "ReceiveOrder";
+}
+
+<h2>ReceiveOrder</h2>
+
+
+<h2>CallForce Employee Dashboard</h2>
+
+@using (Html.BeginForm("ChangeStatus", "Lab", FormMethod.Get))
+{
+    <fieldset>
+        <div class="col-md-4">
+            Select Employee:
+            @Html.DropDownList("somethinghere", null, new { @class = "form-control" })
+            <br />
+            <p>
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </p>
+        </div>
+    </fieldset>
+} 
+
