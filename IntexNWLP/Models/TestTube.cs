@@ -16,9 +16,9 @@ namespace IntexNWLP.Models
         public double concentration { get; set; }
         public double quantity { get; set; }
         
-        [ForeignKey("Tests")]
+        [ForeignKey("Test")]
         public virtual int testId { get; set; }
-        public virtual Tests Test { get; set; }
+        public virtual Test Test { get; set; }
 
     }
 }

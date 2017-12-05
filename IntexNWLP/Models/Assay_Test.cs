@@ -8,8 +8,8 @@ using System.Web;
 
 namespace IntexNWLP.Models
 {
-    [Table("Assay_Tests")]
-    public class Assay_Tests
+    [Table("Assay_Test")]
+    public class Assay_Test
     {
         [Key]
         public int assayTestId { get; set; }
@@ -19,20 +19,20 @@ namespace IntexNWLP.Models
         public double basePrice { get; set; }
         public string comments { get; set; }
         
-        [ForeignKey("Assays")]
+        [ForeignKey("Assay")]
         public virtual int assayId { get; set; }
-        public virtual Assays Assays { get; set; }
+        public virtual Assay Assay { get; set; }
 
-        [ForeignKey("Tests")]
+        [ForeignKey("Test")]
         public virtual int testId { get; set; }
-        public virtual Tests Tests { get; set; }
+        public virtual Test Test { get; set; }
 
-        [ForeignKey("Compound_Samples")]
+        [ForeignKey("Compound_Sample")]
         public virtual int compoundSampleId { get; set; }
-        public virtual Compound_Samples Compound_Samples { get; set; }
+        public virtual Compound_Sample Compound_Sample { get; set; }
 
-        [ForeignKey("Test_Results")]
+        [ForeignKey("Test_Result")]
         public virtual int testResultId { get; set; }
-        public virtual Test_Results Test_Results { get; set; }
+        public virtual Test_Result Test_Result { get; set; }
     }
 }

@@ -7,22 +7,23 @@ using System.Web;
 
 namespace IntexNWLP.Models
 {
-    [Table("Test_Results")]
-    public class Test_Results
+    [Table("Test_Result")]
+    public class Test_Result
     {
         [Key]
         public int testResultId { get; set; }
         
-        [ForeignKey("Tests")]
+        [ForeignKey("Test")]
+        [Column(Order = 0)]
         public virtual int testId { get; set; }
-        public virtual Tests Test { get; set; }
+        public virtual Test Test { get; set; }
         
-        [ForeignKey("Assay_Results")]
+        [ForeignKey("Assay_Result")]
         public virtual int assayResultsId { get; set; }
-        public virtual Assay_Results Assay_Results { get; set; }
+        public virtual Assay_Result Assay_Result { get; set; }
 
-        [ForeignKey("Tests")]
-        public virtual int nextTestId { get; set; }
-        public virtual Tests NextTest { get; set; }
+        [ForeignKey("NextTest")]
+        public virtual int? nextTestId { get; set; }
+        public virtual Test NextTest { get; set; }
     }
 }

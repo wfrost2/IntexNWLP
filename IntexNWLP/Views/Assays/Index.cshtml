@@ -1,4 +1,4 @@
-﻿@model IEnumerable<IntexNWLP.Models.Assays>
+﻿@model IEnumerable<IntexNWLP.Models.Assay>
 
 @{
     ViewBag.Title = "Index";
@@ -12,7 +12,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Compounds.compoundName)
+            @Html.DisplayNameFor(model => model.Compound.compoundName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.assayName)
@@ -32,7 +32,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Compounds.compoundName)
+            @Html.DisplayFor(modelItem => item.Compound.compoundName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.assayName)

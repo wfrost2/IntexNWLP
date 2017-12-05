@@ -7,8 +7,8 @@ using System.Web;
 
 namespace IntexNWLP.Models
 {
-    [Table("Employees")]
-    public class Employees
+    [Table("Employee")]
+    public class Employee
     {
         [Key]
         public int employeeId { get; set; }
@@ -23,12 +23,12 @@ namespace IntexNWLP.Models
         public string employeePhoneWork { get; set; }
         public string employeeEmail { get; set; }
 
-        [ForeignKey("Offices")]
+        [ForeignKey("Office")]
         public virtual int officeId { get; set; }
-        public virtual Offices Offices { get; set; }
+        public virtual Office Office { get; set; }
 
-        [ForeignKey("Roles")]
+        [ForeignKey("Role")]
         public virtual int roleId { get; set; }
-        public virtual Roles Roles { get; set; }
+        public virtual Role Role { get; set; }
     }
 }

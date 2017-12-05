@@ -18,8 +18,8 @@ namespace IntexNWLP.Controllers
         // GET: Assays
         public ActionResult Index()
         {
-            var assays = db.Assays.Include(a => a.Compounds);
-            return View(assays.ToList());
+            var assay = db.Assay.Include(a => a.Compound);
+            return View(assay.ToList());
         }
 
         // GET: Assays/Details/5
@@ -29,18 +29,18 @@ namespace IntexNWLP.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Assays assays = db.Assays.Find(id);
-            if (assays == null)
+            Assay assay = db.Assay.Find(id);
+            if (assay == null)
             {
                 return HttpNotFound();
             }
-            return View(assays);
+            return View(assay);
         }
 
         // GET: Assays/Create
         public ActionResult Create()
         {
-            ViewBag.LTNumber = new SelectList(db.Compounds, "LTNumber", "compoundName");
+            ViewBag.LTNumber = new SelectList(db.Compound, "LTNumber", "compoundName");
             return View();
         }
 
@@ -49,17 +49,17 @@ namespace IntexNWLP.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "assayId,assayName,protocol,estNumDaysComplete,assayDescription,LTNumber")] Assays assays)
+        public ActionResult Create([Bind(Include = "assayId,assayName,protocol,estNumDaysComplete,assayDescription,LTNumber")] Assay assay)
         {
             if (ModelState.IsValid)
             {
-                db.Assays.Add(assays);
+                db.Assay.Add(assay);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.LTNumber = new SelectList(db.Compounds, "LTNumber", "compoundName", assays.LTNumber);
-            return View(assays);
+            ViewBag.LTNumber = new SelectList(db.Compound, "LTNumber", "compoundName", assay.LTNumber);
+            return View(assay);
         }
 
         // GET: Assays/Edit/5
@@ -69,13 +69,13 @@ namespace IntexNWLP.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Assays assays = db.Assays.Find(id);
-            if (assays == null)
+            Assay assay = db.Assay.Find(id);
+            if (assay == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.LTNumber = new SelectList(db.Compounds, "LTNumber", "compoundName", assays.LTNumber);
-            return View(assays);
+            ViewBag.LTNumber = new SelectList(db.Compound, "LTNumber", "compoundName", assay.LTNumber);
+            return View(assay);
         }
 
         // POST: Assays/Edit/5
@@ -83,16 +83,16 @@ namespace IntexNWLP.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "assayId,assayName,protocol,estNumDaysComplete,assayDescription,LTNumber")] Assays assays)
+        public ActionResult Edit([Bind(Include = "assayId,assayName,protocol,estNumDaysComplete,assayDescription,LTNumber")] Assay assay)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(assays).State = EntityState.Modified;
+                db.Entry(assay).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.LTNumber = new SelectList(db.Compounds, "LTNumber", "compoundName", assays.LTNumber);
-            return View(assays);
+            ViewBag.LTNumber = new SelectList(db.Compound, "LTNumber", "compoundName", assay.LTNumber);
+            return View(assay);
         }
 
         // GET: Assays/Delete/5
@@ -102,12 +102,12 @@ namespace IntexNWLP.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Assays assays = db.Assays.Find(id);
-            if (assays == null)
+            Assay assay = db.Assay.Find(id);
+            if (assay == null)
             {
                 return HttpNotFound();
             }
-            return View(assays);
+            return View(assay);
         }
 
         // POST: Assays/Delete/5
@@ -115,8 +115,8 @@ namespace IntexNWLP.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Assays assays = db.Assays.Find(id);
-            db.Assays.Remove(assays);
+            Assay assay = db.Assay.Find(id);
+            db.Assay.Remove(assay);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

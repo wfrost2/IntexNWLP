@@ -8,8 +8,8 @@ using System.Web;
 
 namespace IntexNWLP.Models
 {
-    [Table("Catalog_Subscriptions")]
-    public class Catalog_Subscriptions
+    [Table("Catalog_Subscription")]
+    public class Catalog_Subscription
     {
         [Key]
         public int catalogSubId { get; set; }
@@ -20,12 +20,12 @@ namespace IntexNWLP.Models
         public virtual int catalogType { get; set; }
         public virtual Catalog_Type Catalog_Type { get; set; }
 
-        [ForeignKey("Customers")]
+        [ForeignKey("Customer")]
         public virtual int customerId { get; set; }
-        public virtual Customers Customers { get; set; }
+        public virtual Customer Customer { get; set; }
 
-        [ForeignKey("Employees")]
+        [ForeignKey("Employee")]
         public virtual int employeeId { get; set; }
-        public virtual Employees Employees { get; set; }
+        public virtual Employee Employee { get; set; }
     }
 }

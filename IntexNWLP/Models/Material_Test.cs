@@ -7,15 +7,15 @@ using System.Web;
 
 namespace IntexNWLP.Models
 {
-    [Table("Materials_Tests")]
-    public class Materials_Tests
+    [Table("Material_Test")]
+    public class Material_Test
     {
         [Key]
         public int materialId { get; set; }
 
-        [ForeignKey("Tests")]
+        [ForeignKey("Test")]
         public virtual int testId { get; set; }
-        public virtual Tests Tests { get; set; }
+        public virtual Test Test { get; set; }
 
         public double quantity { get; set; }
     }

@@ -5,14 +5,16 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
+
 namespace IntexNWLP.Models
 {
-    [Table("Materials")]
-    public class Materials
+    [Table("Compound")]
+    public class Compound
     {
         [Key]
-        public int materialId { get; set; }
-        public string materialName { get; set; }
-        public string materialDescription { get; set; }
+        public int LTNumber { get; set; }
+        public string compoundName { get; set; }
+        public string compoundDescription { get; set; }
+
     }
 }

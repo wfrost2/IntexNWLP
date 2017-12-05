@@ -149,44 +149,41 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AssaysController.cs" />
-    <Compile Include="Controllers\EmployeesController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LabController.cs" />
     <Compile Include="DAL\NWLPContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Employees.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Employee_Users.cs" />
-    <Compile Include="Models\Materials.cs" />
-    <Compile Include="Models\Materials_Tests.cs" />
-    <Compile Include="Models\Offices.cs" />
-    <Compile Include="Models\Orders.cs" />
+    <Compile Include="Models\Material.cs" />
+    <Compile Include="Models\Material_Test.cs" />
+    <Compile Include="Models\Office.cs" />
+    <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Order_Invoice.cs" />
     <Compile Include="Models\Order_Status.cs" />
-    <Compile Include="Models\Roles.cs" />
-    <Compile Include="Models\Sales.cs" />
-    <Compile Include="Models\Tests.cs" />
-    <Compile Include="Models\Test_Results.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\Sale.cs" />
+    <Compile Include="Models\Test.cs" />
+    <Compile Include="Models\Test_Result.cs" />
     <Compile Include="Models\TestTube.cs" />
-    <Compile Include="Models\Assays.cs" />
-    <Compile Include="Models\Assay_Orders.cs" />
-    <Compile Include="Models\Assay_Results.cs" />
-    <Compile Include="Models\Assay_Tests.cs" />
-    <Compile Include="Models\Catalog_Subscriptions.cs" />
+    <Compile Include="Models\Assay.cs" />
+    <Compile Include="Models\Assay_Order.cs" />
+    <Compile Include="Models\Assay_Result.cs" />
+    <Compile Include="Models\Assay_Test.cs" />
+    <Compile Include="Models\Catalog_Subscription.cs" />
     <Compile Include="Models\Catalog_Type.cs" />
-    <Compile Include="Models\Compounds.cs" />
-    <Compile Include="Models\Compound_Samples.cs" />
-    <Compile Include="Models\Customers.cs" />
+    <Compile Include="Models\Compound.cs" />
+    <Compile Include="Models\Compound_Sample.cs" />
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Customer_Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\img\testtubes.jpg" />
-    <Content Include="Content\img\testtubes1.jpg" />
-    <Content Include="Content\img\testtubestest.JPG" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -207,7 +204,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -223,11 +222,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Lab\Index.cshtml" />
-    <Content Include="Views\Employees\Create.cshtml" />
-    <Content Include="Views\Employees\Delete.cshtml" />
-    <Content Include="Views\Employees\Details.cshtml" />
-    <Content Include="Views\Employees\Edit.cshtml" />
-    <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Customers\Create.cshtml" />
+    <Content Include="Views\Customers\Delete.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Edit.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Assays\Create.cshtml" />
     <Content Include="Views\Assays\Delete.cshtml" />
     <Content Include="Views\Assays\Details.cshtml" />
@@ -236,10 +235,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
-    <Folder Include="Views\Client\" />
-    <Folder Include="Views\Employee\" />
-    <Folder Include="Views\EmpSales\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

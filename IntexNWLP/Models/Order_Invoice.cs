@@ -13,9 +13,9 @@ namespace IntexNWLP.Models
         [Key]
         public int orderInvoiceId { get; set; }
 
-        [ForeignKey("Orders")]
+        [ForeignKey("Order")]
         public virtual int orderId { get; set; }
-        public virtual Orders Orders { get; set; }
+        public virtual Order Order { get; set; }
 
         public string paymentDate { get; set; }
         public string earlyPaymentDate { get; set; }

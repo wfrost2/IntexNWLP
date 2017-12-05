@@ -8,8 +8,8 @@ using System.Web;
 
 namespace IntexNWLP.Models
 {
-    [Table("Customers")]
-    public class Customers
+    [Table("Customer")]
+    public class Customer
     {
         [Key]
         public int customerId { get; set; }
@@ -24,8 +24,8 @@ namespace IntexNWLP.Models
         public int phone { get; set; }
         public string customerEmail { get; set; }
 
-        [ForeignKey("Employees")]
-        public virtual int employeeId { get; set; }
-        public virtual Employees Employees { get; set; }
+        [ForeignKey("Employee")]
+        public virtual int? employeeId { get; set; }
+        public virtual Employee Employee { get; set; }
     }
 }
