@@ -1,0 +1,58 @@
+﻿@model IntexNWLP.Models.Assays
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Assays</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Compounds.compoundName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Compounds.compoundName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.assayName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.assayName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.protocol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.protocol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estNumDaysComplete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estNumDaysComplete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.assayDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.assayDescription)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.assayId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

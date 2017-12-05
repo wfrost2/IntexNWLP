@@ -11,6 +11,7 @@ namespace IntexNWLP.Models
     [Table("Customer_Users")]
     public class Customer_Users
     {
+        [Key]
         public int customerUserId { get; set; }
         public string username { get; set; }
         public string password { get; set; }
