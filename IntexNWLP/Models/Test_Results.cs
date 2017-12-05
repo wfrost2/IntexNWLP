@@ -8,7 +8,7 @@ using System.Web;
 namespace IntexNWLP.Models
 {
     [Table("Test_Results")]
-    public class TestResult
+    public class Test_Results
     {
         [Key]
         public int testResultId { get; set; }
