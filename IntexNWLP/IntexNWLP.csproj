@@ -221,6 +221,14 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+<<<<<<< HEAD
+    <Content Include="Views\Employee\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Client\" />
+    <Folder Include="Views\EmpSales\" />
+=======
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Lab\Index.cshtml" />
     <Content Include="Views\Customers\Create.cshtml" />
@@ -242,6 +250,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+>>>>>>> 89e41cde8053ec4e957a6a25ca660a16854f172b
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
