@@ -231,6 +231,7 @@ UpgradeLog*.htm
 *.mdf
 *.ldf
 *.ndf
+Web.config
 
 # Business Intelligence projects
 *.rdl.data
