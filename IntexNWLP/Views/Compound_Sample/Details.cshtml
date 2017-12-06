@@ -1,0 +1,106 @@
+﻿@model IntexNWLP.Models.Compound_Sample
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Compound_Sample</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Compound.compoundName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Compound.compoundName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.compoundSequenceCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.compoundSequenceCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateArrived)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateArrived)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.receivedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.receivedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateDue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateDue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.appearance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.appearance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.weightIndicatedByCustomer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.weightIndicatedByCustomer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.weightActual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.weightActual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.molecularMass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.molecularMass)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.maxToleratedDose)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.maxToleratedDose)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.compoundSampleId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

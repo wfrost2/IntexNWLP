@@ -1,4 +1,4 @@
-﻿@model IEnumerable<IntexNWLP.Models.Assay>
+﻿@model IEnumerable<IntexNWLP.Models.Assay_Type>
 
 @{
     ViewBag.Title = "Index";
@@ -11,9 +11,6 @@
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Compound.compoundName)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.assayName)
         </th>
@@ -32,9 +29,6 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Compound.compoundName)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.assayName)
         </td>
         <td>
@@ -47,9 +41,9 @@
             @Html.DisplayFor(modelItem => item.assayDescription)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.assayId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.assayId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.assayId })
+            @Html.ActionLink("Edit", "Edit", new { id=item.assayTypeId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.assayTypeId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.assayTypeId })
         </td>
     </tr>
 }

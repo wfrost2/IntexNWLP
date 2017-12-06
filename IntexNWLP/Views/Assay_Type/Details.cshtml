@@ -1,4 +1,4 @@
-﻿@model IntexNWLP.Models.Assay
+﻿@model IntexNWLP.Models.Assay_Type
 
 @{
     ViewBag.Title = "Details";
@@ -7,17 +7,9 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Assay</h4>
+    <h4>Assay_Type</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Compound.compoundName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Compound.compoundName)
-        </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.assayName)
         </dt>
@@ -53,6 +45,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.assayId }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.assayTypeId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
