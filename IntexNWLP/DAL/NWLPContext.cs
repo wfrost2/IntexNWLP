@@ -15,6 +15,7 @@ namespace IntexNWLP.DAL
         }
 
         public DbSet<Assay_Order> Assay_Order { get; set; }
+        public DbSet<Assay_Type> Assay_Type { get; set; }
         public DbSet<Assay_Result> Assay_Result { get; set; }
         public DbSet<Assay_Test> Assay_Test { get; set; }
         public DbSet<Assay> Assay { get; set; }

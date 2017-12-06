@@ -13,10 +13,10 @@ namespace IntexNWLP.Models
     {
         [Key]
         public int assayId { get; set; }
-        public string assayName { get; set; }
-        public string protocol { get; set; }
-        public int estNumDaysComplete { get; set; }
-        public string assayDescription { get; set; }
+
+        [ForeignKey("Assay_Type")]
+        public virtual int assayTypeId { get; set; }
+        public virtual Assay_Type Assay_Type { get; set; }
 
         [ForeignKey("Compound")]
         public virtual int LTNumber { get; set; }
