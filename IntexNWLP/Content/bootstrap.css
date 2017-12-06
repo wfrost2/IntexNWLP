@@ -1753,7 +1753,9 @@ textarea.form-control {
 }
 
 .form-group {
-  margin-bottom: 15px;
+    margin-top:15px;
+    margin-bottom: 15px;
+
 }
 
 .radio,
@@ -1897,6 +1899,8 @@ textarea.input-lg {
   background-color: #f2dede;
   border-color: #b94a48;
 }
+
+
 
 .has-success .help-block,
 .has-success .control-label {
@@ -6816,4 +6820,13 @@ td.visible-print {
   td.hidden-print {
     display: none !important;
   }
+}
+
+.myForm {
+    background-color: #F9F6EF;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #0F233C;
 }

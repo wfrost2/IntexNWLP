@@ -3,8 +3,10 @@
     ViewBag.Title = "CreateOrder";
 }
 
-<h2>Create Order</h2>
-
+<h2>Place an Order</h2>
+<div class="alert-info">
+<p>Fill out the following information to generate a work order</p>
+</div>
 
 @using (Html.BeginForm())
 {
@@ -13,73 +15,75 @@
     <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            <label class="control-label col-md-2" for="compoundName">Enter Compound Name:</label>
-            <div class="col-md-10">
-                <input class="form-control text-box single-line" id="compoundName" name="compoundName" type="text" value="" required>
+        <div class="myForm">
+            <div class="form-group">
+                <label class="control-label col-md-2" for="compoundName">Enter Compound Name:</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" id="compoundName" name="compoundName" type="text" value="" required>
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-2" for="compoundDescription">Enter Compound Description:</label>
-            <div class="col-md-10">
-                <input class="form-control text-box single-line" id="compoundDescription" name="compoundDescription" type="text" value="" required>
+            <div class="form-group">
+                <label class="control-label col-md-2" for="compoundDescription">Enter Compound Description:</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" id="compoundDescription" name="compoundDescription" type="text" value="" required>
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-2" for="numberOfSamples">Enter number of samples of the compound:</label>
-            <div class="col-md-10">
-                <input class="form-control text-box single-line" id="numberOfSamples" name="numberOfSamples" type="text" value="" required>
+            <div class="form-group">
+                <label class="control-label col-md-2" for="numberOfSamples">Enter number of samples of the compound:</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" id="numberOfSamples" name="numberOfSamples" type="text" value="" required>
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label class="control-label col-md-2" for="quantity">Enter quantity of compound in milligrams:</label>
-            <div class="col-md-10">
-                <input class="form-control text-box single-line" id="quantity" name="quantity" type="text" value="" required>
+            <div class="form-group">
+                <label class="control-label col-md-2" for="quantity">Enter quantity of compound in milligrams:</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" id="quantity" name="quantity" type="text" value="" required>
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label class="control-label col-md-2" for="weight">Enter weight of compound: </label>
-            <div class="col-md-10">
-                <input class="form-control text-box single-line" id="weight" name="weight" type="text" value="" required>
+            <div class="form-group">
+                <label class="control-label col-md-2" for="weight">Enter weight of compound: </label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" id="weight" name="weight" type="text" value="" required>
+                </div>
             </div>
-        </div>
 
-        @*<div class="form-group">
-            <label class="control-label col-md-2" for="mtd">Enter maximum tolerated dose (for animal testing only): </label>
-            <div class="col-md-10">
-                <input class="form-control text-box single-line" id="mtd" name="mtd" type="text" value="">
-            </div>
-        </div>*@
+            @*<div class="form-group">
+                <label class="control-label col-md-2" for="mtd">Enter maximum tolerated dose (for animal testing only): </label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" id="mtd" name="mtd" type="text" value="">
+                </div>
+            </div>*@
 
-        <div class="form-group">
-            <label class="control-label col-md-2" for="assays">Select Assays:</label>
-            <div class="col-md-10">
-                @foreach (var item in Model)
+            <div class="form-group">
+                <label class="control-label col-md-2" for="assays">Select Assays:</label>
+                <div class="col-md-10">
+                    @foreach (var item in Model)
                 {
-                    <input type="checkbox" class="" name="assay-@item.assayTypeId" /> @Html.DisplayFor(modelItem => item.assayName)<br />
-                }
+                        <input type="checkbox" class="" name="assay-@item.assayTypeId" /> @Html.DisplayFor(modelItem => item.assayName)<br />
+                    }
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label class="control-label col-md-2" for="runConditionals">Would you like to run all conditional tests, regardless of if they are necessary? </label>
-            <div class="col-md-10">
-                <input type="checkbox" class="" name="runConditionals" />
+            <div class="form-group">
+                <label class="control-label col-md-2" for="runConditionals">Would you like to run all conditional tests, regardless of if they are necessary? </label>
+                <div class="col-md-10">
+                    <input type="checkbox" class="" name="runConditionals" />
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label class="control-label col-md-2" for="comments">Enter additional information: </label>
-            <div class="col-md-10">
-                <input class="form-control text-box single-line" id="comments" name="comments" type="text" value="">
+            <div class="form-group">
+                <label class="control-label col-md-2" for="comments">Enter additional information: </label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" id="comments" name="comments" type="text" value="">
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Place Order" class="btn btn-default" />
+                </div>
             </div>
         </div>
     </div>
