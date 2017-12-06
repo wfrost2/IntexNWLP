@@ -14,14 +14,17 @@ namespace IntexNWLP.Models
         [Key]
         public int compoundSampleId { get; set; }
         public int compoundSequenceCode { get; set; }
+        [Range(0,100)]
         public double quantity { get; set; }
-        public DateTime dateArrived { get; set; }
+        public string dateArrived { get; set; }
         public string receivedBy { get; set; }
-        public DateTime dateDue { get; set; }
+        public string dateDue { get; set; }
         public string appearance { get; set; }
+        [Range(0, 100)]
         public double weightIndicatedByCustomer { get; set; }
         public double weightActual { get; set; }
         public double molecularMass { get; set; }
+        [Range(0, 100)]
         public double maxToleratedDose { get; set; }
 
         [ForeignKey("Compound")]

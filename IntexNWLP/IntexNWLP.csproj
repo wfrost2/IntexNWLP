@@ -148,15 +148,19 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AssaysController.cs" />
+    <Compile Include="Controllers\Assay_TypeController.cs" />
+    <Compile Include="Controllers\CompoundsController.cs" />
+    <Compile Include="Controllers\CustomerPortalController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LabController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\TestsController.cs" />
     <Compile Include="DAL\NWLPContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Assay_Type.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Employee_Users.cs" />
     <Compile Include="Models\Material.cs" />
@@ -222,11 +226,27 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Tests\Create.cshtml" />
+    <Content Include="Views\Tests\Delete.cshtml" />
+    <Content Include="Views\Tests\Details.cshtml" />
+    <Content Include="Views\Tests\Edit.cshtml" />
+    <Content Include="Views\Tests\Index.cshtml" />
+    <Content Include="Views\CustomerPortal\Index.cshtml" />
+    <Content Include="Views\CustomerPortal\CreateOrder.cshtml" />
+    <Content Include="Views\Assay_Type\Create.cshtml" />
+    <Content Include="Views\Assay_Type\Delete.cshtml" />
+    <Content Include="Views\Assay_Type\Details.cshtml" />
+    <Content Include="Views\Assay_Type\Edit.cshtml" />
+    <Content Include="Views\Assay_Type\Index.cshtml" />
+    <Content Include="Views\Compounds\Create.cshtml" />
+    <Content Include="Views\Compounds\Delete.cshtml" />
+    <Content Include="Views\Compounds\Details.cshtml" />
+    <Content Include="Views\Compounds\Edit.cshtml" />
+    <Content Include="Views\Compounds\Index.cshtml" />
+    <Content Include="Views\CustomerPortal\OrderConfirmation.cshtml" />
+    <Content Include="Views\CustomerPortal\Browse.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Views\Client\" />
-    <Folder Include="Views\EmpSales\" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Lab\Index.cshtml" />
     <Content Include="Views\Customers\Create.cshtml" />
@@ -234,11 +254,6 @@
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Customers\Edit.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
-    <Content Include="Views\Assays\Create.cshtml" />
-    <Content Include="Views\Assays\Delete.cshtml" />
-    <Content Include="Views\Assays\Details.cshtml" />
-    <Content Include="Views\Assays\Edit.cshtml" />
-    <Content Include="Views\Assays\Index.cshtml" />
     <Content Include="Views\Orders\Create.cshtml" />
     <Content Include="Views\Orders\Delete.cshtml" />
     <Content Include="Views\Orders\Details.cshtml" />
@@ -258,6 +273,11 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Client\" />
+    <Folder Include="Views\EmpSales\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
