@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "ViewAssays";
+}
+
+<h2>View Assays</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Assay ID
+        </th>
+        <th>
+            Compound LT Number
+        </th>
+        <th>
+            Assay Chosen
+        </th>
+    </tr>
+    @foreach (var assay in ViewBag.Assays)
+    {
+        <tr>
+            <td>
+                @assay.assayId
+            </td>
+            <td>
+                @assay.LTNumber
+            </td>
+            <td>
+                @assay.Assay_Type.assayName
+            </td>
+
+        </tr>
+    }
+</table>

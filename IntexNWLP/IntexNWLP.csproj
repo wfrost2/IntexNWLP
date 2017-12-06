@@ -260,6 +260,8 @@
     <Content Include="Views\Compounds\Index.cshtml" />
     <Content Include="Views\CustomerPortal\OrderConfirmation.cshtml" />
     <Content Include="Views\CustomerPortal\Browse.cshtml" />
+    <Content Include="Views\CustomerPortal\PastOrders.cshtml" />
+    <Content Include="Views\CustomerPortal\ViewAssays.cshtml" />
     <Content Include="Views\Order_Status\Create.cshtml" />
     <Content Include="Views\Order_Status\Delete.cshtml" />
     <Content Include="Views\Order_Status\Details.cshtml" />

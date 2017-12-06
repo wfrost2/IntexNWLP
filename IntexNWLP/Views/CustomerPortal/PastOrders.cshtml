@@ -1,0 +1,43 @@
+﻿@model IEnumerable<IntexNWLP.Models.Order>
+@{
+    ViewBag.Title = "PastOrders";
+}
+
+<h2>Past Orders</h2>
+<table class="table">
+    <tr>
+        <th>
+            Order Number
+        </th>
+        <th>
+            Order Date
+        </th>
+        <th>
+            Order Status
+        </th>
+        <th>
+            Calculated Order Price
+        </th>
+    </tr>
+    @foreach (var orderItem in ViewBag.Orders)
+    {
+        <tr>
+            <td>
+                @orderItem.orderId
+            </td>
+            <td>
+                @orderItem.orderDate
+            </td>
+            <td>
+                @orderItem.Order_Status.status
+            </td>
+            <td>
+                @orderItem.orderTotal
+            </td>
+            <td>
+                @Html.ActionLink("View Assays", "ViewAssays", new { id = orderItem.orderId })
+            </td>
+
+        </tr>
+    }
+</table>

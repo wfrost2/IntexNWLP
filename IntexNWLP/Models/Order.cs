@@ -17,8 +17,8 @@ namespace IntexNWLP.Models
         public virtual int customerId { get; set; }
         public virtual Customer Customer { get; set; }
         
-        public decimal orderTotal { get; set; }
-        public DateTime orderDate { get; set; }
+        public decimal? orderTotal { get; set; }
+        public DateTime? orderDate { get; set; }
         public string customerComments { get; set; }
         public string runConditionals { get; set; }
 
@@ -26,5 +26,9 @@ namespace IntexNWLP.Models
         public virtual int? orderStatusId { get; set; }
         public virtual Order_Status Order_Status { get; set; }
 
+        public Order()
+        {
+            orderTotal = 0;
+        }
     }
 }

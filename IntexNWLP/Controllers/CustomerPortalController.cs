@@ -1,10 +1,13 @@
-﻿using IntexNWLP.DAL;
-using IntexNWLP.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using IntexNWLP.DAL;
+using IntexNWLP.Models;
 
 namespace IntexNWLP.Controllers
 {
@@ -28,7 +31,7 @@ namespace IntexNWLP.Controllers
         {
             //create and save order
             Order order = new Order();
-            order.orderDate = DateTime.Now.Date;
+            order.orderDate = DateTime.Now;
             order.orderStatusId = 1;
             order.Order_Status = db.Order_Status.Find(order.orderStatusId);
             if (form["runConditionals"] != null)
@@ -110,6 +113,37 @@ namespace IntexNWLP.Controllers
 
         public ActionResult PastOrders()
         {
+            int customerId = 2; //edit to be actual, logged in user
+            IEnumerable<Order> orders = db.Database.SqlQuery<Order>("SELECT orderId, customerId, orderTotal, orderDate, customerComments, runConditionals, orderStatusId FROM [Order] WHERE customerId = " + customerId + " ");
+            List<Order> lOrders = new List<Order>();
+            foreach (Order order in orders)
+            {
+                order.Order_Status = db.Order_Status.Find(order.orderStatusId);
+                lOrders.Add(order);
+            }
+            //List<Order> lOrders = db.Database.;
+            //IEnumerable<Order> orders = db.Order.Where(s => s.customerId == customerId).OrderBy(s => s.orderDate);
+            //TempData["orders"] = orders;
+
+            ViewBag.Orders = lOrders;
+
+            return View();
+        }
+
+        public ActionResult ViewAssays(int id)
+        {
+            int orderId = id;
+            IEnumerable<Assay_Order> assay_orders = db.Database.SqlQuery<Assay_Order>(
+                "SELECT * FROM [Assay_Order] WHERE  orderId = " + orderId + " ");
+            List<Assay> lAssay = new List<Assay>();
+            foreach(Assay_Order ao in assay_orders)
+            {
+                id = ao.assayId;
+                Assay assay = db.Assay.Find(id);
+                assay.Assay_Type = db.Assay_Type.Find(assay.assayTypeId);
+                lAssay.Add(assay);
+            }
+            ViewBag.Assays = lAssay;
             return View();
         }
     }
