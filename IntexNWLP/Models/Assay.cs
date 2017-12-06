@@ -19,7 +19,7 @@ namespace IntexNWLP.Models
         public virtual Assay_Type Assay_Type { get; set; }
 
         [ForeignKey("Compound")]
-        public virtual int LTNumber { get; set; }
+        public virtual int? LTNumber { get; set; }
         public virtual Compound Compound { get; set; }
     }
 }

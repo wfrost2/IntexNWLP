@@ -20,8 +20,8 @@ namespace IntexNWLP.Models
         public string customerCity { get; set; }
         public string customerState { get; set; }
         public string customerCountry { get; set; }
-        public int customerZip { get; set; }
-        public int phone { get; set; }
+        public string customerZip { get; set; }
+        public string phone { get; set; }
         public string customerEmail { get; set; }
 
         [ForeignKey("Employee")]
