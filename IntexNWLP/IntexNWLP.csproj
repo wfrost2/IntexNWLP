@@ -152,6 +152,7 @@
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LabController.cs" />
+    <Compile Include="Controllers\ManagementController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="DAL\NWLPContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -222,11 +223,9 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Management\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Views\Client\" />
-    <Folder Include="Views\EmpSales\" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Lab\Index.cshtml" />
     <Content Include="Views\Customers\Create.cshtml" />
@@ -258,6 +257,11 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Client\" />
+    <Folder Include="Views\EmpSales\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

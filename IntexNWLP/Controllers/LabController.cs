@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using IntexNWLP.DAL;
 using IntexNWLP.Models;
-
+using System.Web.Security;
 
 namespace IntexNWLP.Controllers
 {

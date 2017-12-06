@@ -44,13 +44,27 @@ namespace IntexNWLP.Controllers
             {
                 FormsAuthentication.SetAuthCookie(username, rememberMe);
 
-                return RedirectToAction("Home", "Index");
+                return RedirectToAction("Index", "Home");
 
             }
-            else
+            else if (string.Equals(username, "Lab") && (string.Equals(password, "password")))
+            {
+                FormsAuthentication.SetAuthCookie(username, rememberMe);
+
+                return RedirectToAction("Index", "Lab");
+
+            }
+            else 
             {
                 return View();
             }
+        }
+
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Index", "Home");
         }
     }
 }
