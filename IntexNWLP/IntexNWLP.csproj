@@ -155,6 +155,7 @@
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LabController.cs" />
+    <Compile Include="Controllers\ManagementController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\Order_StatusController.cs" />
     <Compile Include="Controllers\TestsController.cs" />
@@ -228,6 +229,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Management\Index.cshtml" />
     <Content Include="Views\Lab\ShowOrderAssayInfo.cshtml" />
     <Content Include="Views\Assays\Create.cshtml" />
     <Content Include="Views\Assays\Delete.cshtml" />
@@ -258,6 +260,8 @@
     <Content Include="Views\Compounds\Index.cshtml" />
     <Content Include="Views\CustomerPortal\OrderConfirmation.cshtml" />
     <Content Include="Views\CustomerPortal\Browse.cshtml" />
+    <Content Include="Views\CustomerPortal\PastOrders.cshtml" />
+    <Content Include="Views\CustomerPortal\ViewAssays.cshtml" />
     <Content Include="Views\Order_Status\Create.cshtml" />
     <Content Include="Views\Order_Status\Delete.cshtml" />
     <Content Include="Views\Order_Status\Details.cshtml" />
