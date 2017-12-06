@@ -14,13 +14,13 @@ namespace IntexNWLP.Models
         [Key]
         public int assayTestId { get; set; }
         public DateTime assayTestDate { get; set; }
-        public double assayTestCost { get; set; }
+        public decimal assayTestCost { get; set; }
         public int assayTestHours { get; set; }
-        public double basePrice { get; set; }
+        public decimal basePrice { get; set; }
         public string comments { get; set; }
         
         [ForeignKey("Assay")]
-        public virtual int assayId { get; set; }
+        public virtual int? assayId { get; set; }
         public virtual Assay Assay { get; set; }
 
         [ForeignKey("Test")]
@@ -32,7 +32,7 @@ namespace IntexNWLP.Models
         public virtual Compound_Sample Compound_Sample { get; set; }
 
         [ForeignKey("Test_Result")]
-        public virtual int testResultId { get; set; }
+        public virtual int? testResultId { get; set; }
         public virtual Test_Result Test_Result { get; set; }
     }
 }

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<IntexNWLP.Models.Assay_Test>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Assay.assayId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Compound_Sample.receivedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Test.testName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Test_Result.testResultId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.assayTestDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.assayTestCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.assayTestHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.basePrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.comments)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Assay.assayId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Compound_Sample.receivedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Test.testName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Test_Result.testResultId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.assayTestDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.assayTestCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.assayTestHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.basePrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.comments)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.assayTestId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.assayTestId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.assayTestId })
+        </td>
+    </tr>
+}
+
+</table>
