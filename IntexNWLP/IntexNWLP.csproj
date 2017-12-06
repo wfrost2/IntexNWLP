@@ -156,6 +156,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LabController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\Order_StatusController.cs" />
     <Compile Include="Controllers\TestsController.cs" />
     <Compile Include="DAL\NWLPContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -257,6 +258,11 @@
     <Content Include="Views\Compounds\Index.cshtml" />
     <Content Include="Views\CustomerPortal\OrderConfirmation.cshtml" />
     <Content Include="Views\CustomerPortal\Browse.cshtml" />
+    <Content Include="Views\Order_Status\Create.cshtml" />
+    <Content Include="Views\Order_Status\Delete.cshtml" />
+    <Content Include="Views\Order_Status\Details.cshtml" />
+    <Content Include="Views\Order_Status\Edit.cshtml" />
+    <Content Include="Views\Order_Status\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Login.cshtml" />

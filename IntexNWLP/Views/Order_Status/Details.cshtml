@@ -1,0 +1,34 @@
+﻿@model IntexNWLP.Models.Order_Status
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Order_Status</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.statusDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.statusDescription)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.orderStatusId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

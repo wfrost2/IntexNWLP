@@ -5,13 +5,17 @@
 }
 
 <h2>Order, Assay, and Compound Information</h2>
-
-<h4>Please update all necessary infomation upon receipt of order compounds</h4>
+<br />
+<br />
 
 <p>Order Number: @ViewBag.Order.orderId</p>
 <p>Customer ID: @ViewBag.Order.customerId</p>
 <p>Order Date: @ViewBag.Order.orderDate</p>
 <p>Customer Comments: @ViewBag.Order.customerComments</p>
+
+<b>@Html.ActionLink("Update Order Status", "Edit", "Orders", new { id = ViewBag.Order.orderId }, null)</b>
+
+
 <br />
 <br />
 
@@ -48,6 +52,9 @@
 </table>
 <br />
 <br />
+
+<h4 style="color:red">Please update all necessary infomation upon receipt of order compounds</h4>
+
 
 <table class="table">
     <tr>
