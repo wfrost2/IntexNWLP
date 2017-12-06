@@ -23,7 +23,7 @@ namespace IntexNWLP.Models
         public string runConditionals { get; set; }
 
         [ForeignKey("Order_Status")]
-        public virtual int orderStatusId { get; set; }
+        public virtual int? orderStatusId { get; set; }
         public virtual Order_Status Order_Status { get; set; }
 
         public Order()

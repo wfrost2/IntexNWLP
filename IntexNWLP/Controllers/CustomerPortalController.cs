@@ -62,8 +62,8 @@ namespace IntexNWLP.Controllers
                 Compound_Sample compound_Sample = new Compound_Sample();
                 compound_Sample.compoundSequenceCode = i;
                 compound_Sample.LTNumber = compound.LTNumber;
-                compound_Sample.weightIndicatedByCustomer = Convert.ToDouble(form["weight"]);
-                compound_Sample.quantity = Convert.ToDouble(form["quantity"]);
+                compound_Sample.weightIndicatedByCustomer = Convert.ToDecimal(form["weight"]);
+                compound_Sample.quantity = Convert.ToDecimal(form["quantity"]);
                 //string mtd = form["mtd"];
                 //if(mtd != "")
                 //{

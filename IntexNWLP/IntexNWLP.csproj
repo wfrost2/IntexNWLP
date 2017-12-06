@@ -148,13 +148,16 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Compound_SampleController.cs" />
     <Compile Include="Controllers\Assay_TypeController.cs" />
     <Compile Include="Controllers\CompoundsController.cs" />
     <Compile Include="Controllers\CustomerPortalController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LabController.cs" />
+    <Compile Include="Controllers\ManagementController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\Order_StatusController.cs" />
     <Compile Include="Controllers\TestsController.cs" />
     <Compile Include="DAL\NWLPContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -226,6 +229,18 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Management\Index.cshtml" />
+    <Content Include="Views\Lab\ShowOrderAssayInfo.cshtml" />
+    <Content Include="Views\Assays\Create.cshtml" />
+    <Content Include="Views\Assays\Delete.cshtml" />
+    <Content Include="Views\Assays\Details.cshtml" />
+    <Content Include="Views\Assays\Edit.cshtml" />
+    <Content Include="Views\Assays\Index.cshtml" />
+    <Content Include="Views\Compound_Sample\Create.cshtml" />
+    <Content Include="Views\Compound_Sample\Delete.cshtml" />
+    <Content Include="Views\Compound_Sample\Details.cshtml" />
+    <Content Include="Views\Compound_Sample\Edit.cshtml" />
+    <Content Include="Views\Compound_Sample\Index.cshtml" />
     <Content Include="Views\Tests\Create.cshtml" />
     <Content Include="Views\Tests\Delete.cshtml" />
     <Content Include="Views\Tests\Details.cshtml" />
@@ -247,6 +262,11 @@
     <Content Include="Views\CustomerPortal\Browse.cshtml" />
     <Content Include="Views\CustomerPortal\PastOrders.cshtml" />
     <Content Include="Views\CustomerPortal\ViewAssays.cshtml" />
+    <Content Include="Views\Order_Status\Create.cshtml" />
+    <Content Include="Views\Order_Status\Delete.cshtml" />
+    <Content Include="Views\Order_Status\Details.cshtml" />
+    <Content Include="Views\Order_Status\Edit.cshtml" />
+    <Content Include="Views\Order_Status\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Login.cshtml" />

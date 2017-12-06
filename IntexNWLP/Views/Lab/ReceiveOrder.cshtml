@@ -4,22 +4,13 @@
     ViewBag.Title = "ReceiveOrder";
 }
 
-<h2>ReceiveOrder</h2>
+<h2>Find Order:</h2>
 
+<p><b>@ViewBag.notFound</b></p>
 
-<h2>CallForce Employee Dashboard</h2>
-
-@using (Html.BeginForm("ChangeStatus", "Lab", FormMethod.Get))
+@using (Html.BeginForm("ReceiveOrder", "Lab", FormMethod.Post))
 {
-    <fieldset>
-        <div class="col-md-4">
-            Select Employee:
-            @Html.DropDownList("somethinghere", null, new { @class = "form-control" })
-            <br />
-            <p>
-                <input type="submit" value="Submit" class="btn btn-primary" />
-            </p>
-        </div>
-    </fieldset>
-} 
-
+    <label for="inputEmail">Order Number:</label>
+    @Html.TextBox("Order")
+    <button type="submit">Submit</button>
+}

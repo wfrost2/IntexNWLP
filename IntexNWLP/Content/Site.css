@@ -61,7 +61,7 @@ textarea {
 }
 
 a {
-    color: inherit;
+    color: #F9F6EF;
     text-decoration: none;
 }
 
@@ -70,6 +70,12 @@ a:hover  {
     text-decoration: none;
 }
 
-portalButton {
-    color: blue;
+.portalButton {
+    padding: 80px;
+    margin: 55px;
+    background-color: #A5B2C2;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #F9F6EF;
 }

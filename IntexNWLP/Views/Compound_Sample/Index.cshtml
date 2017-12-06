@@ -1,0 +1,93 @@
+﻿@model IEnumerable<IntexNWLP.Models.Compound_Sample>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Compound.compoundName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.compoundSequenceCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateArrived)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.receivedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateDue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.appearance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.weightIndicatedByCustomer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.weightActual)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.molecularMass)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.maxToleratedDose)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Compound.compoundName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.compoundSequenceCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateArrived)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.receivedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateDue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.appearance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.weightIndicatedByCustomer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.weightActual)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.molecularMass)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.maxToleratedDose)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.compoundSampleId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.compoundSampleId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.compoundSampleId })
+        </td>
+    </tr>
+}
+
+</table>
