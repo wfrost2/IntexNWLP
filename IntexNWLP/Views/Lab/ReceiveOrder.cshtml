@@ -11,6 +11,6 @@
 @using (Html.BeginForm("ReceiveOrder", "Lab", FormMethod.Post))
 {
     <label for="inputEmail">Order Number:</label>
-    @Html.TextBox("Order")
-    <button type="submit">Submit</button>
+    @Html.TextBox("Order", null, new { @class = "form-control" })
+    <button type="submit" class="btn btn-default">Submit</button>
 }

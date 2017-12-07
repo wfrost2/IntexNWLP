@@ -15,6 +15,7 @@ namespace IntexNWLP.Controllers
     {
         private NWLPContext db = new NWLPContext();
 
+        [Authorize]
         // GET: CustomerPortal
         public ActionResult Index()
         {

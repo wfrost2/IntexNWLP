@@ -7,15 +7,14 @@
 
 <div class="row empPortal">
     <div class="col-md-4 portalOption">
-        <button class="btn btn-default portalButton">@Html.ActionLink("Receive an Order", "ReceiveOrder")</button>
+        <a>@Html.ActionLink("Receive an Order", "ReceiveOrder", null, new { @class = "btn btn-default portalButton" })</a>
     </div>
 
     <div class="col-md-4 portalOption">
-        <button class="btn btn-default portalButton">Schedule Assays</button>
+        <a>@Html.ActionLink("Schedule Assays", "Index", null, new { @class = "btn btn-default portalButton" })</a>
     </div>
 
     <div class="col-md-4 portalOption">
-        <button class="btn btn-default portalButton">@Html.ActionLink("Perform a Test", "Create", "Assay_Test", null, null)
-</button>
+        <a>@Html.ActionLink("Perform a Test", "Create", "Assay_Test", null, new { @class = "btn btn-default portalButton" })</a>
     </div>
 </div>
