@@ -42,6 +42,7 @@ namespace IntexNWLP.Controllers
         {
             TempData["oid"] = oid;
             TempData["id"] = id;
+            ViewBag.oid = oid;
             ViewBag.compoundSampleId = new SelectList(db.Compund_Sample, "compoundSampleId", "compoundSampleId");
             ViewBag.testId = new SelectList(db.Test, "testId", "testName");
             ViewBag.testResultId = new SelectList(db.Test_Result, "testResultId", "testResultId");
@@ -59,6 +60,7 @@ namespace IntexNWLP.Controllers
             {
                 int oid1 = Convert.ToInt32(TempData["oid"]);
                 assay_Test.assayId = ViewBag.id;
+                
                 
                 
                 db.Assay_Test.Add(assay_Test);

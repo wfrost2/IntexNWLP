@@ -66,6 +66,7 @@ namespace IntexNWLP.Controllers
         public ActionResult Edit(int? id, int oid)
         {
             TempData["oid"] = oid;
+            ViewBag.oid = oid;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -101,6 +102,7 @@ namespace IntexNWLP.Controllers
         public ActionResult Delete(int? id, int oid)
         {
             TempData["oid"] = oid;
+            ViewBag.oid = oid;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -120,6 +122,8 @@ namespace IntexNWLP.Controllers
         {
             int oid1 = Convert.ToInt32(TempData["oid"]);
             Compound_Sample compound_Sample = db.Compund_Sample.Find(id);
+
+            //Assay_Test assay_Test = db.Database.SqlQuery<Assay_Test>("sdfasf");
             db.Compund_Sample.Remove(compound_Sample);
             db.SaveChanges();
             return RedirectToAction("ReceiveOrderFrom", "Lab", new { id = oid1 });

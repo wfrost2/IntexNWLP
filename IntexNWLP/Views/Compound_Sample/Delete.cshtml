@@ -106,7 +106,7 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Return to Order", "ReceiveOrder", "Lab", null, null)
+            @Html.ActionLink("Return to Order", "ReceiveOrderFrom", "Lab", new { id = ViewBag.oid }, null)
         </div>
     }
 </div>
