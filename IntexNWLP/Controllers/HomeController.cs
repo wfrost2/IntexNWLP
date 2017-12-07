@@ -44,7 +44,7 @@ namespace IntexNWLP.Controllers
             {
                 FormsAuthentication.SetAuthCookie(username, rememberMe);
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "CustomerPortal");
 
             }
             else if (string.Equals(username, "Lab") && (string.Equals(password, "password")))
