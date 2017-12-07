@@ -81,3 +81,108 @@ textarea {
 }
 
 
+.crazyform {
+    border-radius: 5px;
+    max-width: 700px;
+    width: 100%;
+    margin: 5% auto;
+    background-color: #FFFFFF;
+    overflow: hidden;
+    border: solid;
+    border-color: #0F233C;
+    color: #0F233C;
+}
+
+    .crazyform h1 {
+        font-size: 18px;
+        background: #0F233C none repeat scroll 0% 0%;
+        color: white;
+        padding: 22px 25px;
+        margin: auto;
+        text-shadow: none;
+        text-align: center;
+    }
+
+.crazyform p span {
+    color: #F00;
+}
+
+.crazyform p {
+    margin: 0px;
+    font-weight: 500;
+    line-height: 2;
+    color: #333;
+    margin-left:15px;
+}
+
+
+.crazyform input {
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #0F233C;
+    margin-bottom: 15px;
+    width: 75%;
+    height: 40px;
+    float: left;
+    padding: 0px 15px;
+    margin-left: 15px;
+}
+
+.crazyform a {
+    text-decoration: inherit;
+}
+
+.crazyform textarea {
+    border-radius: 0px 5px 5px 0px;
+    border: 1px solid #EEE;
+    margin: 0;
+    width: 75%;
+    height: 130px;
+    float: left;
+    padding: 0px 15px;
+}
+
+.form-group {
+    overflow: hidden;
+    clear: both;
+}
+
+
+.contentform {
+}
+
+.button-submit {
+    background-color: #0F233C;
+    color: #FFF;
+    text-align: center;
+    width: 100%;
+    border: 0;
+    padding: 17px 25px;
+    cursor: pointer;
+    margin-top: 40px;
+    font-size: 18px;
+}
+
+    .button-submit:hover {
+        background-color: #77818B;
+        color: #0F233C;
+    }
+
+.leftcontact {
+    width: 49.5%;
+    float: left;
+    border-right: 1px dotted #CCC;
+    box-sizing: border-box;
+    padding: 0px 15px 0px 0px;
+}
+
+.rightcontact {
+    width: 49.5%;
+    float: right;
+    box-sizing: border-box;
+    padding: 0px 0px 0px 15px;
+}
+
+
+
+
+
