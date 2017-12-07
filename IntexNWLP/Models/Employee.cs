@@ -24,11 +24,11 @@ namespace IntexNWLP.Models
         public string employeeEmail { get; set; }
 
         [ForeignKey("Office")]
-        public virtual int officeId { get; set; }
+        public virtual int? officeId { get; set; }
         public virtual Office Office { get; set; }
 
         [ForeignKey("Role")]
-        public virtual int roleId { get; set; }
+        public virtual int? roleId { get; set; }
         public virtual Role Role { get; set; }
     }
 }

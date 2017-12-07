@@ -1,0 +1,90 @@
+﻿@model IntexNWLP.Models.Assay_Test
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Assay_Test</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Assay.assayId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Assay.assayId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Compound_Sample.receivedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Compound_Sample.receivedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Test.testName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Test.testName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Test_Result.testResultId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Test_Result.testResultId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.assayTestDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.assayTestDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.assayTestCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.assayTestCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.assayTestHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.assayTestHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.basePrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.basePrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comments)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.assayTestId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
