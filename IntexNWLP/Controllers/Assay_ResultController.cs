@@ -11,116 +11,112 @@ using IntexNWLP.Models;
 
 namespace IntexNWLP.Controllers
 {
-    public class OrdersController : Controller
+    public class Assay_ResultController : Controller
     {
         private NWLPContext db = new NWLPContext();
 
-        // GET: Orders
+        // GET: Assay_Result
         public ActionResult Index()
         {
-            var order = db.Order.Include(o => o.Customer).Include(o => o.Order_Status);
-            return View(order.ToList());
+            var assay_Result = db.Assay_Result.Include(a => a.Assay_Test);
+            return View(assay_Result.ToList());
         }
 
-        // GET: Orders/Details/5
+        // GET: Assay_Result/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Order order = db.Order.Find(id);
-            if (order == null)
+            Assay_Result assay_Result = db.Assay_Result.Find(id);
+            if (assay_Result == null)
             {
                 return HttpNotFound();
             }
-            return View(order);
+            return View(assay_Result);
         }
 
-        // GET: Orders/Create
+        // GET: Assay_Result/Create
         public ActionResult Create()
         {
-            ViewBag.customerId = new SelectList(db.Customer, "customerId", "customerFirstName");
-            ViewBag.orderStatusId = new SelectList(db.Order_Status, "orderStatusId", "status");
+            ViewBag.assayTestId = new SelectList(db.Assay_Test, "assayTestId", "assayTestId");
             return View();
         }
 
-        // POST: Orders/Create
+        // POST: Assay_Result/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "orderId,customerId,orderTotal,orderDate,customerComments,runConditionals,orderStatusId")] Order order)
+        public ActionResult Create([Bind(Include = "assayResultsId,assayTestFile,assayTestDescriptive,completeDate,assayTestId")] Assay_Result assay_Result)
         {
             if (ModelState.IsValid)
             {
-                db.Order.Add(order);
+                db.Assay_Result.Add(assay_Result);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.customerId = new SelectList(db.Customer, "customerId", "customerFirstName", order.customerId);
-            ViewBag.orderStatusId = new SelectList(db.Order_Status, "orderStatusId", "status", order.orderStatusId);
-            return View(order);
+            ViewBag.assayTestId = new SelectList(db.Assay_Test, "assayTestId", "comments", assay_Result.assayTestId);
+            return View(assay_Result);
         }
 
-        // GET: Orders/Edit/5
+        // GET: Assay_Result/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Order order = db.Order.Find(id);
-            if (order == null)
+            Assay_Result assay_Result = db.Assay_Result.Find(id);
+            if (assay_Result == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.customerId = new SelectList(db.Customer, "customerId", "customerFirstName", order.customerId);
-            ViewBag.orderStatusId = new SelectList(db.Order_Status, "orderStatusId", "status", order.orderStatusId);
-            return View(order);
+            ViewBag.assayTestId = new SelectList(db.Assay_Test, "assayTestId", "comments", assay_Result.assayTestId);
+            return View(assay_Result);
         }
 
-        // POST: Orders/Edit/5
+        // POST: Assay_Result/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "orderId,customerId,orderTotal,orderDate,customerComments,runConditionals,orderStatusId")] Order order)
+        public ActionResult Edit([Bind(Include = "assayResultsId,assayTestFile,assayTestDescriptive,completeDate,assayTestId")] Assay_Result assay_Result)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(order).State = EntityState.Modified;
+                db.Entry(assay_Result).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("ReceiveOrderFrom", "Lab", new { id = order.orderId });
+                return RedirectToAction("Index");
             }
-            ViewBag.customerId = new SelectList(db.Customer, "customerId", "customerFirstName", order.customerId);
-            ViewBag.orderStatusId = new SelectList(db.Order_Status, "orderStatusId", "status", order.orderStatusId);
-            return View(order);
+            ViewBag.assayTestId = new SelectList(db.Assay_Test, "assayTestId", "comments", assay_Result.assayTestId);
+            return View(assay_Result);
         }
 
-        // GET: Orders/Delete/5
+        // GET: Assay_Result/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Order order = db.Order.Find(id);
-            if (order == null)
+            Assay_Result assay_Result = db.Assay_Result.Find(id);
+            if (assay_Result == null)
             {
                 return HttpNotFound();
             }
-            return View(order);
+            return View(assay_Result);
         }
 
-        // POST: Orders/Delete/5
+        // POST: Assay_Result/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Order order = db.Order.Find(id);
-            db.Order.Remove(order);
+            Assay_Result assay_Result = db.Assay_Result.Find(id);
+            db.Assay_Result.Remove(assay_Result);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

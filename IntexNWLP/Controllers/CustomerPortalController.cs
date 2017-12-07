@@ -15,6 +15,7 @@ namespace IntexNWLP.Controllers
     {
         private NWLPContext db = new NWLPContext();
 
+        [Authorize]
         // GET: CustomerPortal
         public ActionResult Index()
         {
@@ -103,7 +104,7 @@ namespace IntexNWLP.Controllers
 
         public ActionResult Browse()
         {
-            return View();
+            return View(db.Assay_Type.ToList());
         }
 
         public ActionResult CheckStatus()

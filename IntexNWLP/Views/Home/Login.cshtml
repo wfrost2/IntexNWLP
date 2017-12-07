@@ -3,13 +3,13 @@
     ViewBag.Title = "Login";
 }
 
-<h2>Login</h2>
+<h2>Login</h2><br />
 
 @using (Html.BeginForm("Login", "Home", FormMethod.Post))
 {
     <label for="inputEmail">Username</label>
-    @Html.TextBox("Username")
+    @Html.TextBox("Username", null, new { @class = "form-control" })
     <label for="inputPassword">Password</label>
-    @Html.Password("Password")
-    <button type="submit">Login</button>
+    @Html.Password("Password", null, new { @class = "form-control" })
+    <button type="submit" class="btn btn-default">Login</button>
 }

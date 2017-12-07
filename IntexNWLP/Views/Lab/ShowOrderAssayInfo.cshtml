@@ -41,6 +41,7 @@
     <h1>Assay Information</h1>
     <table class="ordersTable">
         <tr>
+<<<<<<< HEAD
             <th>
                 Assay ID
             </th>
@@ -69,7 +70,7 @@
                     @assay.LTNumber
                 </td>
                 <td>
-                    @Html.ActionLink("Create Test for Assay", "Create", "Assay_Test", new { id = assay.assayId }, new { @class = "btn btn-default" })
+                    @Html.ActionLink("Create Test for Assay", "Create", "Assay_Test", new { id = assay.assayId, oid = ViewBag.Order.orderId }, null)
                 </td>
 
             </tr>
@@ -174,8 +175,9 @@
                 @compound.maxToleratedDose
             </td>
             <td>
-                @Html.ActionLink("Update", "Edit", "Compound_Sample", new { id = compound.compoundSampleId }, new { @class = "btn btn-default" })
-                @Html.ActionLink("Delete", "Delete", "Compound_Sample", new { id = compound.compoundSampleId }, new { @class = "btn btn-default" })
+
+                @Html.ActionLink("Update", "Edit", "Compound_Sample", new { id = compound.compoundSampleId, oid = ViewBag.Order.orderId }, null) |
+                @Html.ActionLink("Delete", "Delete", "Compound_Sample", new { id = compound.compoundSampleId, oid = ViewBag.Order.orderId }, null)
             </td>
         </tr>
     }

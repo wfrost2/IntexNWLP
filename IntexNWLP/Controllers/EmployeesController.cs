@@ -11,116 +11,116 @@ using IntexNWLP.Models;
 
 namespace IntexNWLP.Controllers
 {
-    public class OrdersController : Controller
+    public class EmployeesController : Controller
     {
         private NWLPContext db = new NWLPContext();
 
-        // GET: Orders
+        // GET: Employees
         public ActionResult Index()
         {
-            var order = db.Order.Include(o => o.Customer).Include(o => o.Order_Status);
-            return View(order.ToList());
+            var employee = db.Employee.Include(e => e.Office).Include(e => e.Role);
+            return View(employee.ToList());
         }
 
-        // GET: Orders/Details/5
+        // GET: Employees/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Order order = db.Order.Find(id);
-            if (order == null)
+            Employee employee = db.Employee.Find(id);
+            if (employee == null)
             {
                 return HttpNotFound();
             }
-            return View(order);
+            return View(employee);
         }
 
-        // GET: Orders/Create
+        // GET: Employees/Create
         public ActionResult Create()
         {
-            ViewBag.customerId = new SelectList(db.Customer, "customerId", "customerFirstName");
-            ViewBag.orderStatusId = new SelectList(db.Order_Status, "orderStatusId", "status");
+            ViewBag.officeId = new SelectList(db.Office, "officeId", "officeName");
+            ViewBag.roleId = new SelectList(db.Role, "roleId", "roleName");
             return View();
         }
 
-        // POST: Orders/Create
+        // POST: Employees/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "orderId,customerId,orderTotal,orderDate,customerComments,runConditionals,orderStatusId")] Order order)
+        public ActionResult Create([Bind(Include = "employeeId,employeeFirstName,employeeLastName,employeeAddress1,employeeAddress2,employeeCity,employeeState,employeeZip,employeePhonePersonal,employeePhoneWork,employeeEmail,officeId,roleId")] Employee employee)
         {
             if (ModelState.IsValid)
             {
-                db.Order.Add(order);
+                db.Employee.Add(employee);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.customerId = new SelectList(db.Customer, "customerId", "customerFirstName", order.customerId);
-            ViewBag.orderStatusId = new SelectList(db.Order_Status, "orderStatusId", "status", order.orderStatusId);
-            return View(order);
+            ViewBag.officeId = new SelectList(db.Office, "officeId", "officeName", employee.officeId);
+            ViewBag.roleId = new SelectList(db.Role, "roleId", "roleName", employee.roleId);
+            return View(employee);
         }
 
-        // GET: Orders/Edit/5
+        // GET: Employees/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Order order = db.Order.Find(id);
-            if (order == null)
+            Employee employee = db.Employee.Find(id);
+            if (employee == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.customerId = new SelectList(db.Customer, "customerId", "customerFirstName", order.customerId);
-            ViewBag.orderStatusId = new SelectList(db.Order_Status, "orderStatusId", "status", order.orderStatusId);
-            return View(order);
+            ViewBag.officeId = new SelectList(db.Office, "officeId", "officeName", employee.officeId);
+            ViewBag.roleId = new SelectList(db.Role, "roleId", "roleName", employee.roleId);
+            return View(employee);
         }
 
-        // POST: Orders/Edit/5
+        // POST: Employees/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "orderId,customerId,orderTotal,orderDate,customerComments,runConditionals,orderStatusId")] Order order)
+        public ActionResult Edit([Bind(Include = "employeeId,employeeFirstName,employeeLastName,employeeAddress1,employeeAddress2,employeeCity,employeeState,employeeZip,employeePhonePersonal,employeePhoneWork,employeeEmail,officeId,roleId")] Employee employee)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(order).State = EntityState.Modified;
+                db.Entry(employee).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("ReceiveOrderFrom", "Lab", new { id = order.orderId });
+                return RedirectToAction("Index");
             }
-            ViewBag.customerId = new SelectList(db.Customer, "customerId", "customerFirstName", order.customerId);
-            ViewBag.orderStatusId = new SelectList(db.Order_Status, "orderStatusId", "status", order.orderStatusId);
-            return View(order);
+            ViewBag.officeId = new SelectList(db.Office, "officeId", "officeName", employee.officeId);
+            ViewBag.roleId = new SelectList(db.Role, "roleId", "roleName", employee.roleId);
+            return View(employee);
         }
 
-        // GET: Orders/Delete/5
+        // GET: Employees/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Order order = db.Order.Find(id);
-            if (order == null)
+            Employee employee = db.Employee.Find(id);
+            if (employee == null)
             {
                 return HttpNotFound();
             }
-            return View(order);
+            return View(employee);
         }
 
-        // POST: Orders/Delete/5
+        // POST: Employees/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Order order = db.Order.Find(id);
-            db.Order.Remove(order);
+            Employee employee = db.Employee.Find(id);
+            db.Employee.Remove(employee);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

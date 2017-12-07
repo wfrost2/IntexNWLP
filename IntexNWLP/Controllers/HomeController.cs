@@ -44,7 +44,7 @@ namespace IntexNWLP.Controllers
             {
                 FormsAuthentication.SetAuthCookie(username, rememberMe);
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "CustomerPortal");
 
             }
             else if (string.Equals(username, "Lab") && (string.Equals(password, "password")))
@@ -54,17 +54,24 @@ namespace IntexNWLP.Controllers
                 return RedirectToAction("Index", "Lab");
 
             }
+            else if (string.Equals(username, "Customer") && (string.Equals(password, "password")))
+            {
+                FormsAuthentication.SetAuthCookie(username, rememberMe);
+
+                return RedirectToAction("Index", "CustomerPortal");
+
+            }
             else 
             {
                 return View();
             }
         }
 
-        public ActionResult LogOut()
+        public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
             Session.Abandon();
-            return RedirectToAction("Index", "Home");
+            return View();
         }
     }
 }

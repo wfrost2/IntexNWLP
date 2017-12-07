@@ -255,15 +255,6 @@ textarea {
     text-align: center;
 }
 
-    .crazyTable>.btn:hover .crazyTable>.btn-default:hover {
-        background-color: #081525;
-        color:white;
-        border-color:white;
-    }
-
-    .crazyTable .btn:hover .btn-default {
-        margin-bottom: 2px;
-    }
 
 
 

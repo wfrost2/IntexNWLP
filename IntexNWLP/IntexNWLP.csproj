@@ -148,12 +148,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Assay_ResultController.cs" />
     <Compile Include="Controllers\Assay_TestController.cs" />
     <Compile Include="Controllers\Compound_SampleController.cs" />
     <Compile Include="Controllers\Assay_TypeController.cs" />
     <Compile Include="Controllers\CompoundsController.cs" />
     <Compile Include="Controllers\CustomerPortalController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LabController.cs" />
     <Compile Include="Controllers\ManagementController.cs" />
@@ -164,6 +166,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Assay_Type.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Employee_Users.cs" />
@@ -221,6 +224,7 @@
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -229,7 +233,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="Views\Management\Index.cshtml" />
     <Content Include="Views\Lab\ShowOrderAssayInfo.cshtml" />
     <Content Include="Views\Assays\Create.cshtml" />
@@ -268,11 +271,22 @@
     <Content Include="Views\Order_Status\Details.cshtml" />
     <Content Include="Views\Order_Status\Edit.cshtml" />
     <Content Include="Views\Order_Status\Index.cshtml" />
+    <Content Include="Views\Home\Logout.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
     <Content Include="Views\Assay_Test\Create.cshtml" />
     <Content Include="Views\Assay_Test\Delete.cshtml" />
     <Content Include="Views\Assay_Test\Details.cshtml" />
     <Content Include="Views\Assay_Test\Edit.cshtml" />
     <Content Include="Views\Assay_Test\Index.cshtml" />
+    <Content Include="Views\Assay_Result\Create.cshtml" />
+    <Content Include="Views\Assay_Result\Delete.cshtml" />
+    <Content Include="Views\Assay_Result\Details.cshtml" />
+    <Content Include="Views\Assay_Result\Edit.cshtml" />
+    <Content Include="Views\Assay_Result\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Login.cshtml" />

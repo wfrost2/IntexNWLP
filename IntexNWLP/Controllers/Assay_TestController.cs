@@ -38,8 +38,9 @@ namespace IntexNWLP.Controllers
         }
 
         // GET: Assay_Test/Create
-        public ActionResult Create(int id)
+        public ActionResult Create(int id, int oid)
         {
+            TempData["oid"] = oid;
             TempData["id"] = id;
             ViewBag.compoundSampleId = new SelectList(db.Compund_Sample, "compoundSampleId", "compoundSampleId");
             ViewBag.testId = new SelectList(db.Test, "testId", "testName");
@@ -56,13 +57,13 @@ namespace IntexNWLP.Controllers
         {
             if (ModelState.IsValid)
             {
-                ViewBag.id = TempData["id"];
+                int oid1 = Convert.ToInt32(TempData["oid"]);
                 assay_Test.assayId = ViewBag.id;
                 
                 
                 db.Assay_Test.Add(assay_Test);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("ReceiveOrderFrom", "Lab", new { id = oid1 });
             }
 
             ViewBag.assayId = new SelectList(db.Assay, "assayId", "assayId", assay_Test.assayId);

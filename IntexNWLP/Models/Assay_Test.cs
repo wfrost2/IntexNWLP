@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -13,10 +14,15 @@ namespace IntexNWLP.Models
     {
         [Key]
         public int assayTestId { get; set; }
+        [DisplayName("Assay Test Date")]
         public DateTime assayTestDate { get; set; }
+        [DisplayName("Test Cost")]
         public decimal assayTestCost { get; set; }
+        [DisplayName("Test Hours")]
         public int assayTestHours { get; set; }
+        [DisplayName("Base Price")]
         public decimal basePrice { get; set; }
+        [DisplayName("Comments")]
         public string comments { get; set; }
         
         [ForeignKey("Assay")]

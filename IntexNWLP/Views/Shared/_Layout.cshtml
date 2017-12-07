@@ -30,7 +30,7 @@
                 {
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            @Html.ActionLink("Logout", "LogOut", "Home", new { @class = "actionLink" })
+                            @Html.ActionLink("Logout", "LogOut", "Home", null, new { @class = "actionLink" })
                         </li>
                     </ul>  
                 }
@@ -43,7 +43,7 @@
                                 <span class="caret"></span>
                             </a>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Customer Login", "Index", "Customers")</li>
+                            <li>@Html.ActionLink("Customer Login", "Index", "CustomerPortal")</li>
                             <li>@Html.ActionLink("Lab Login", "Index", "Lab")</li>
                             <li>@Html.ActionLink("Management Login", "Index", "Management")</li>
                         </ul>
@@ -57,6 +57,14 @@
         @RenderBody()
         <hr />
         <footer>
+            @if (Request.IsAuthenticated)
+            {
+                <div id="footerLinks">
+                    @Html.ActionLink("Management Portal", "Index", "Management", null, new { @class = "footerLink" })
+                    @Html.ActionLink("Customer Portal", "Index", "CustomerPortal", null, new { @class = "footerLink" })
+                    @Html.ActionLink("Lab Portal", "Index", "Lab", null, new { @class = "footerLink" })
+                </div>
+            }
             <p>&copy; @DateTime.Now.Year - Northwest Labs</p>
         </footer>
     </div>
