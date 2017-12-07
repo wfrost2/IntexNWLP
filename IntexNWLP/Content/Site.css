@@ -144,6 +144,7 @@ textarea {
 .form-group {
     overflow: hidden;
     clear: both;
+
 }
 
 
@@ -182,6 +183,87 @@ textarea {
     padding: 0px 0px 0px 15px;
 }
 
+.crazyform input[type=checkbox] {
+    -ms-transform: scale(.5); /* IE */
+    -moz-transform: scale(.5); /* FF */
+    -webkit-transform: scale(.5); /* Safari and Chrome */
+    -o-transform: scale(.5); /* Opera */
+    padding: 10px;
+    width = 20px;
+}
+
+
+.checkboxtext {
+ 
+    font-size: 110%;
+    display: inline;
+}
+
+.orderConf {
+    background-color: #A5B2C2;
+    font-weight: bold;
+}
+
+.hopethisworks {
+    margin-left: 100px;
+}
+
+.ordersTable {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    .ordersTable td, .ordersTable th {
+        border: 1px solid #77818B;
+    }
+
+    .ordersTable tr:nth-child(even) {
+        background-color: #F0F8FF;
+    }
+
+    .ordersTable tr:hover {
+        background-color: #DCDCDC;
+        color: #081525;
+    }
+
+    .ordersTable th {
+        /*padding-top: 12px;
+        padding-bottom: 12px;*/
+        text-align: left;
+        background-color: #77818B;
+        color: white;
+    }
+
+.crazyTable {
+    border-radius: 5px;
+    width: 100%;
+    margin: 5% auto;
+    background-color: #FFFFFF;
+    overflow: hidden;
+    border: solid;
+    border-color: #0F233C;
+    color: #0F233C;
+}
+
+.crazyTable h1 {
+    font-size: 18px;
+    background: #0F233C none repeat scroll 0% 0%;
+    color: white;
+    padding: 22px 25px;
+    margin: auto;
+    text-shadow: none;
+    text-align: center;
+}
+
+    .crazyTable>.btn:hover .crazyTable>.btn-default:hover {
+        background-color: #081525;
+        color:white;
+        border-color:white;
+    }
+
+    .crazyTable .btn:hover .btn-default {
+        margin-bottom: 2px;
+    }
 
 
 

@@ -9,12 +9,48 @@
     <h3>Must be printed and sent with compounds to our Singapore laboratory</h3>
 </div>
 
-Customer: @Model.Customer.customerFirstName @Model.Customer.customerLastName
-<br />
-Order Date: @Model.orderDate
-<br />
-Order ID: @Model.orderId
-<br />
-Comments: @Model.customerComments
-<br />
-Order Status: @Model.Order_Status.status
+Address to send to:<br /><br />
+
+Northwest Labs<br />
+1234 Science Ln<br />
+Singapore 408600<br />
+REPUBLIC OF SINGAPORE 
+
+<div class="crazyform">
+
+    <h1>Order Summary</h1>
+
+    <div class="">
+        <div class="orderConf">
+            <h4>Order ID</h4>
+        </div>
+        <h5>@Model.orderId</h5>
+    </div>
+
+    <div class="">
+        <div class="orderConf">
+            <h4>Customer Name:</h4>
+        </div>
+        <h5>@Model.Customer.customerFirstName @Model.Customer.customerLastName</h5>
+    </div>
+
+    <div class="">
+        <div class="orderConf">
+            <h4>Order Date:</h4>
+        </div>
+        <h5>@Model.orderDate</h5>
+    </div>
+
+    <div class="">
+        <div class="orderConf">
+            <h4>Comments:</h4>
+        </div>
+        <h5>@Model.customerComments</h5>
+    </div>
+
+</div>
+
+@Html.ActionLink("Go To Customer Portal", "Index", "CustomerPortal", null, new { @class = "btn btn-default" })
+
+        
+            
