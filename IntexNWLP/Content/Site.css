@@ -79,3 +79,9 @@ textarea {
 .navbar-inverse .navbar-nav > li > a {
     color: #F9F6EF;
 }
+
+.lock {
+    width: 100%;
+    text-align: center;
+    margin: 20px;
+}

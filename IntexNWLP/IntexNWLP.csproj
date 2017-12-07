@@ -267,6 +267,7 @@
     <Content Include="Views\Order_Status\Details.cshtml" />
     <Content Include="Views\Order_Status\Edit.cshtml" />
     <Content Include="Views\Order_Status\Index.cshtml" />
+    <Content Include="Views\Home\Logout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Login.cshtml" />
