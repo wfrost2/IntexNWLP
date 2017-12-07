@@ -60,15 +60,13 @@ textarea {
     text-align: center;
 }
 
-.portalButton > a {
-    color: #F9F6EF;
-    text-decoration: none;
-}
 
 .portalButton {
     padding: 80px;
     margin: 55px;
     background-color: #0F233C;
+    color: #F9F6EF;
+    text-decoration: none;
 }
 
     .portalButton:hover {
