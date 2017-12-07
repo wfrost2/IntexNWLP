@@ -1,7 +1,46 @@
-﻿
+﻿@model IEnumerable<IntexNWLP.Models.Assay_Type>
 @{
     ViewBag.Title = "Browse";
 }
 
 <h2>Browse</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.assayName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.protocol)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estNumDaysComplete)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.assayDescription)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.assayName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.protocol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estNumDaysComplete)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.assayDescription)
+            </td>
+            <td>
+            </td>
+        </tr>
+    }
+
+</table>
 

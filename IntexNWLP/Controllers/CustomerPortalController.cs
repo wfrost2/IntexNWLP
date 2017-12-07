@@ -104,7 +104,7 @@ namespace IntexNWLP.Controllers
 
         public ActionResult Browse()
         {
-            return View();
+            return View(db.Assay_Type.ToList());
         }
 
         public ActionResult CheckStatus()
