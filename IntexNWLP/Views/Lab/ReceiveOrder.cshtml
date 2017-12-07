@@ -3,14 +3,32 @@
 @{
     ViewBag.Title = "ReceiveOrder";
 }
-
-<h2>Find Order:</h2>
-
 <p><b>@ViewBag.notFound</b></p>
 
 @using (Html.BeginForm("ReceiveOrder", "Lab", FormMethod.Post))
 {
-    <label for="inputEmail">Order Number:</label>
-    @Html.TextBox("Order", null, new { @class = "form-control" })
-    <button type="submit" class="btn btn-default">Submit</button>
+
+   <div class="crazyform">
+
+        <h1>Search Order Number</h1>
+
+        <div class="contentform">
+            <div style="text-align:center;">
+
+                <div style="text-align:center;">
+                    <br />
+                    <br />
+                    <div class="leftcontact">
+                        <p>Order Number:</p>
+                    </div>
+                    <div class="rightcontact">
+                        @Html.TextBox("Order")
+                    </div>
+                </div>
+        </div>
+
+        <button type="submit" class="button-submit">See Order Details</button>
+    </div>
+       
+</div>
 }

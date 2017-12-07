@@ -35,7 +35,7 @@ namespace IntexNWLP.Models
         public virtual Test Test { get; set; }
 
         [ForeignKey("Compound_Sample")]
-        public virtual int compoundSampleId { get; set; }
+        public virtual int? compoundSampleId { get; set; }
         [DisplayName("Compound Sample")]
         public virtual Compound_Sample Compound_Sample { get; set; }
 

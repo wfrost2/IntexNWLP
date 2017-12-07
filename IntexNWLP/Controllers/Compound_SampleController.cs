@@ -63,8 +63,10 @@ namespace IntexNWLP.Controllers
         }
 
         // GET: Compound_Sample/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int? id, int oid)
         {
+            TempData["oid"] = oid;
+            ViewBag.oid = oid;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -85,19 +87,22 @@ namespace IntexNWLP.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "compoundSampleId,compoundSequenceCode,quantity,dateArrived,receivedBy,dateDue,appearance,weightIndicatedByCustomer,weightActual,molecularMass,maxToleratedDose,LTNumber")] Compound_Sample compound_Sample)
         {
+            int oid1 = Convert.ToInt32(TempData["oid"]);
             if (ModelState.IsValid)
             {
                 db.Entry(compound_Sample).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index", "Lab", null);
+                return RedirectToAction("ReceiveOrderFrom", "Lab", new { id = oid1 });
             }
             ViewBag.LTNumber = new SelectList(db.Compound, "LTNumber", "compoundName", compound_Sample.LTNumber);
             return View(compound_Sample);
         }
 
         // GET: Compound_Sample/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int? id, int oid)
         {
+            TempData["oid"] = oid;
+            ViewBag.oid = oid;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -115,10 +120,13 @@ namespace IntexNWLP.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            int oid1 = Convert.ToInt32(TempData["oid"]);
             Compound_Sample compound_Sample = db.Compund_Sample.Find(id);
+
+            //Assay_Test assay_Test = db.Database.SqlQuery<Assay_Test>("sdfasf");
             db.Compund_Sample.Remove(compound_Sample);
             db.SaveChanges();
-            return RedirectToAction("Index", "Lab", null);
+            return RedirectToAction("ReceiveOrderFrom", "Lab", new { id = oid1 });
         }
 
         protected override void Dispose(bool disposing)

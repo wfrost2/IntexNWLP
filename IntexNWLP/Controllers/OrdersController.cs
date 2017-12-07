@@ -92,7 +92,7 @@ namespace IntexNWLP.Controllers
             {
                 db.Entry(order).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index", "Lab", null);
+                return RedirectToAction("ReceiveOrderFrom", "Lab", new { id = order.orderId });
             }
             ViewBag.customerId = new SelectList(db.Customer, "customerId", "customerFirstName", order.customerId);
             ViewBag.orderStatusId = new SelectList(db.Order_Status, "orderStatusId", "status", order.orderStatusId);

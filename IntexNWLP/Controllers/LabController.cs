@@ -105,5 +105,41 @@ namespace IntexNWLP.Controllers
             return View();
         }
 
+        public ActionResult ReceiveOrderFrom(int id)
+        {
+            Order order = db.Order.Find(id);
+
+            if (order != null)
+            {
+                IEnumerable<Assay> assay = db.Database.SqlQuery<Assay>("SELECT Assay.assayId, Assay.assayTypeId, LTNumber " +
+                    "FROM Assay_Order INNER JOIN Assay " +
+                    "ON Assay_Order.assayId = Assay.assayId " +
+                    "INNER JOIN Assay_Type ON Assay.assayTypeId = Assay_Type.assayTypeId " +
+                    "WHERE Assay_Order.orderId = " + order.orderId);
+
+                IEnumerable<Compound_Sample> compoundsample = db.Database.SqlQuery<Compound_Sample>("SELECT compoundSampleId, compoundSequenceCode, Compound_Sample.LTNumber, quantity," +
+                    " dateArrived, receivedBy, dateDue, appearance, weightIndicatedByCustomer, weightActual, molecularMass, maxToleratedDose " +
+                    "FROM Compound_Sample, Compound, Assay_Order, Assay " +
+                    "WHERE Assay_Order.orderId = " + order.orderId + " AND Assay_Order.assayId = Assay.assayId " +
+                    "AND Assay.LTNumber = Compound.LTNumber AND Compound.LTNumber = Compound_Sample.LTNumber");
+
+                TempData["assay"] = assay;
+                TempData["compounds"] = compoundsample;
+                TempData["order"] = order;
+
+
+                return RedirectToAction("ShowOrderAssayInfo", "Lab");
+
+            }
+            else
+            {
+                ViewBag.notFound = "Your order number was not found";
+                return View();
+
+            }
+
+        }
+
+
     }
 }
