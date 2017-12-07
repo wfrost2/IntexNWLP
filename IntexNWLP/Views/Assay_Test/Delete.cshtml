@@ -1,0 +1,96 @@
+﻿@model IntexNWLP.Models.Assay_Test
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Assay_Test</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Assay.assayId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Assay.assayId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Compound_Sample.receivedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Compound_Sample.receivedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Test.testName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Test.testName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Test_Result.testResultId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Test_Result.testResultId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.assayTestDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.assayTestDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.assayTestCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.assayTestCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.assayTestHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.assayTestHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.basePrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.basePrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comments)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -19,7 +19,7 @@ namespace IntexNWLP.Models
         public DateTime? dateArrived { get; set; }
 
         public string receivedBy { get; set; }
-        public DateTime dateDue { get; set; }
+        public DateTime? dateDue { get; set; }
         public string appearance { get; set; }
 
         [Range(0, 100)]
