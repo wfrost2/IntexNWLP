@@ -76,7 +76,7 @@ namespace IntexNWLP.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.LTNumber = new SelectList(db.Compound, "LTNumber", "compoundName", compound_Sample.LTNumber);
+            ViewBag.LTNumber = new SelectList(db.Compound, "LTNumber", "LTNumber", compound_Sample.LTNumber);
             return View(compound_Sample);
         }
 

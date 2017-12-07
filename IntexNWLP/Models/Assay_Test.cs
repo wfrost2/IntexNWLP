@@ -31,14 +31,17 @@ namespace IntexNWLP.Models
 
         [ForeignKey("Test")]
         public virtual int testId { get; set; }
+        [DisplayName("Test")]
         public virtual Test Test { get; set; }
 
         [ForeignKey("Compound_Sample")]
         public virtual int? compoundSampleId { get; set; }
+        [DisplayName("Compound Sample")]
         public virtual Compound_Sample Compound_Sample { get; set; }
 
         [ForeignKey("Test_Result")]
         public virtual int? testResultId { get; set; }
+        [DisplayName("Test Result")]
         public virtual Test_Result Test_Result { get; set; }
     }
 }
