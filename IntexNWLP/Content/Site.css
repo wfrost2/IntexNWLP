@@ -69,6 +69,7 @@ textarea {
     padding: 80px;
     margin: 55px;
     background-color: #0F233C;
+    color: #F9F6EF;
 }
 
     .portalButton:hover {
@@ -185,4 +186,16 @@ textarea {
     float: right;
     box-sizing: border-box;
     padding: 0px 0px 0px 15px;
+}
+
+.form-control {
+    margin-bottom: 20px;
+}
+
+label {
+    font-family: 'Raleway', sans-serif;
+}
+
+.footerLinks {
+    text-align: left;
 }

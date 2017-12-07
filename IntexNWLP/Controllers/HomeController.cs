@@ -54,6 +54,13 @@ namespace IntexNWLP.Controllers
                 return RedirectToAction("Index", "Lab");
 
             }
+            else if (string.Equals(username, "Customer") && (string.Equals(password, "password")))
+            {
+                FormsAuthentication.SetAuthCookie(username, rememberMe);
+
+                return RedirectToAction("Index", "CustomerPortal");
+
+            }
             else 
             {
                 return View();
