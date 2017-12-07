@@ -62,7 +62,7 @@ namespace IntexNWLP.Controllers
                 
                 db.Assay_Test.Add(assay_Test);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Lab", null);
             }
 
             ViewBag.assayId = new SelectList(db.Assay, "assayId", "assayId", assay_Test.assayId);

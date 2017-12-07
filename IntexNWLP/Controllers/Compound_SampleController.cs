@@ -89,7 +89,7 @@ namespace IntexNWLP.Controllers
             {
                 db.Entry(compound_Sample).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Lab", null);
             }
             ViewBag.LTNumber = new SelectList(db.Compound, "LTNumber", "compoundName", compound_Sample.LTNumber);
             return View(compound_Sample);
@@ -118,7 +118,7 @@ namespace IntexNWLP.Controllers
             Compound_Sample compound_Sample = db.Compund_Sample.Find(id);
             db.Compund_Sample.Remove(compound_Sample);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Lab", null);
         }
 
         protected override void Dispose(bool disposing)
