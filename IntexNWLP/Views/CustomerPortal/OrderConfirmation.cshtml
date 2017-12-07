@@ -5,16 +5,41 @@
 
 
 <h2>Order Confirmation</h2>
-<div class="alert-info">
-    <h3>Must be printed and sent with compounds to our Singapore laboratory</h3>
+<div class="container">
+    <div class="alert-info">
+        <h3>Must be printed and sent with compounds to our Singapore laboratory</h3>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>Customer: @Model.Customer.customerFirstName @Model.Customer.customerLastName</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>Order Date: @Model.orderDate</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>Order ID: @Model.orderId</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>Comments: @Model.customerComments</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>Order Status: @Model.Order_Status.status</p>
+        </div>
+    </div>
+    
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <p>@Html.ActionLink("Create Another Order", "CreateOrder")</p>
+        </div>
+    </div>
+    
 </div>
-
-Customer: @Model.Customer.customerFirstName @Model.Customer.customerLastName
-<br />
-Order Date: @Model.orderDate
-<br />
-Order ID: @Model.orderId
-<br />
-Comments: @Model.customerComments
-<br />
-Order Status: @Model.Order_Status.status
