@@ -1,0 +1,50 @@
+﻿@model IntexNWLP.Models.Assay_Result
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Assay_Result</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Assay_Test.comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Assay_Test.comments)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.assayTestFile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.assayTestFile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.assayTestDescriptive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.assayTestDescriptive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.completeDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.completeDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.assayResultsId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

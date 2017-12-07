@@ -18,7 +18,7 @@ namespace IntexNWLP.Models
         public DateTime completeDate { get; set; }
 
         [ForeignKey("Assay_Test")]
-        public virtual int assayTestId { get; set; }
+        public virtual int? assayTestId { get; set; }
         public virtual Assay_Test Assay_Test { get; set; }
 
     }
