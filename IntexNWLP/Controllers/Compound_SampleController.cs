@@ -102,6 +102,7 @@ namespace IntexNWLP.Controllers
         public ActionResult Delete(int? id, int oid)
         {
             TempData["oid"] = oid;
+            TempData["id"] = id;
             ViewBag.oid = oid;
             if (id == null)
             {
@@ -121,7 +122,11 @@ namespace IntexNWLP.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             int oid1 = Convert.ToInt32(TempData["oid"]);
+            int id1 = Convert.ToInt32(TempData["id"]);
             Compound_Sample compound_Sample = db.Compund_Sample.Find(id);
+
+            db.Database.ExecuteSqlCommand("UPDATE Assay_Test SET compoundSampleId = NULL WHERE compoundSampleId = " + id1);
+
 
             //Assay_Test assay_Test = db.Database.SqlQuery<Assay_Test>("sdfasf");
             db.Compund_Sample.Remove(compound_Sample);
