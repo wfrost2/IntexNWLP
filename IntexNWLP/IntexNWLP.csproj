@@ -148,6 +148,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Assay_TestController.cs" />
     <Compile Include="Controllers\Compound_SampleController.cs" />
     <Compile Include="Controllers\Assay_TypeController.cs" />
     <Compile Include="Controllers\CompoundsController.cs" />
@@ -273,6 +274,11 @@
     <Content Include="Views\Employees\Details.cshtml" />
     <Content Include="Views\Employees\Edit.cshtml" />
     <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Assay_Test\Create.cshtml" />
+    <Content Include="Views\Assay_Test\Delete.cshtml" />
+    <Content Include="Views\Assay_Test\Details.cshtml" />
+    <Content Include="Views\Assay_Test\Edit.cshtml" />
+    <Content Include="Views\Assay_Test\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Login.cshtml" />

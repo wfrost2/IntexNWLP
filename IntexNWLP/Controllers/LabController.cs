@@ -49,12 +49,17 @@ namespace IntexNWLP.Controllers
                     "WHERE Assay_Order.orderId = " + order.orderId + " AND Assay_Order.assayId = Assay.assayId " +
                     "AND Assay.LTNumber = Compound.LTNumber AND Compound.LTNumber = Compound_Sample.LTNumber");
 
+                //foreach (Compound_Sample cs in compoundsample)
+                //{
+                //    Compound_Sample oCS = db.Compund_Sample.Find(cs.compoundSampleId);
+                //    oCS.dateArrived = DateTime.Now;
+                //    oCS.receivedBy = "Lab Assistant 1";
+                //    db.SaveChanges();
+                //}
 
                 TempData["assay"] = assay;
                 TempData["compounds"] = compoundsample;
                 TempData["order"] = order;
-
-
 
 
                 return RedirectToAction("ShowOrderAssayInfo", "Lab");
@@ -76,6 +81,8 @@ namespace IntexNWLP.Controllers
             ViewBag.Order = TempData["order"];
             ViewBag.Assays = TempData["assay"];
             ViewBag.Compound = TempData["compounds"];
+
+            
 
             return View();
         }

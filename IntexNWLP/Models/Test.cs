@@ -13,6 +13,6 @@ namespace IntexNWLP.Models
         [Key]
         public int testId { get; set; }
         public string testName { get; set; }
-        public double quotedPrice { get; set; }
+        public decimal quotedPrice { get; set; }
     }
 }

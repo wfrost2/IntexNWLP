@@ -46,6 +46,9 @@
             <td>
                 @assay.LTNumber
             </td>
+            <td>
+                @Html.ActionLink("Create Test for Assay", "Create", "Assay_Test", new { id = assay.assayId }, null)
+            </td>
 
         </tr>
     }
@@ -145,4 +148,8 @@
         </tr>
     }
 
+
 </table>
+
+@Html.ActionLink("Return to Lab Portal", "Index", "Lab", null, null)
+@*@Html.ActionLink("Proceed to Create Test", "Create", "Assay_Test", null, null)*@
