@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -13,8 +14,11 @@ namespace IntexNWLP.Models
     {
         [Key]
         public int assayResultsId { get; set; }
+        [DisplayName("Test File")]
         public String assayTestFile { get; set; }
+        [DisplayName("Test Description")]
         public String assayTestDescriptive { get; set; }
+        [DisplayName("Date Complete")]
         public DateTime completeDate { get; set; }
 
         [ForeignKey("Assay_Test")]

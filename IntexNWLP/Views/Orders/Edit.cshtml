@@ -73,7 +73,7 @@
 }
 
 <div>
-    @Html.ActionLink("Return to Order", "ReceiveOrder", "Lab", null, null)
+    @Html.ActionLink("Return to Order", "ReceiveOrderFrom", "Lab", new { id = Model.orderId }, null)
 </div>
 
 @section Scripts {

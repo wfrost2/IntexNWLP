@@ -17,6 +17,9 @@
             @Html.LabelFor(model => model.assayTestFile, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.assayTestFile, new { htmlAttributes = new { @class = "form-control" } })
+                <form>
+                    <input type="file" onchange="this.form.submit()" />
+                </form>
                 @Html.ValidationMessageFor(model => model.assayTestFile, "", new { @class = "text-danger" })
             </div>
         </div>

@@ -9,37 +9,48 @@
     <div class="alert-info">
         <h3>Must be printed and sent with compounds to our Singapore laboratory</h3>
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <p>Customer: @Model.Customer.customerFirstName @Model.Customer.customerLastName</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <p>Order Date: @Model.orderDate</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <p>Order ID: @Model.orderId</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <p>Comments: @Model.customerComments</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <p>Order Status: @Model.Order_Status.status</p>
-        </div>
-    </div>
-    
-    <br />
-    <div class="row">
-        <div class="col-md-12">
-            <p>@Html.ActionLink("Create Another Order", "CreateOrder")</p>
-        </div>
-    </div>
-    
 </div>
+Address to send to:<br /><br />
+
+Northwest Labs<br />
+1234 Science Ln<br />
+Singapore 408600<br />
+REPUBLIC OF SINGAPORE 
+
+<div class="crazyform">
+
+    <h1>Order Summary</h1>
+
+    <div class="">
+        <div class="orderConf">
+            <h4>Order ID</h4>
+        </div>
+        <h5>@Model.orderId</h5>
+    </div>
+
+    <div class="">
+        <div class="orderConf">
+            <h4>Customer Name:</h4>
+        </div>
+        <h5>@Model.Customer.customerFirstName @Model.Customer.customerLastName</h5>
+    </div>
+
+    <div class="">
+        <div class="orderConf">
+            <h4>Order Date:</h4>
+        </div>
+        <h5>@Model.orderDate</h5>
+    </div>
+
+    <div class="">
+        <div class="orderConf">
+            <h4>Comments:</h4>
+        </div>
+        <h5>@Model.customerComments</h5>
+    </div>
+
+</div>
+
+@Html.ActionLink("Go To Customer Portal", "Index", "CustomerPortal", null, new { @class = "btn btn-default" })
+
+      

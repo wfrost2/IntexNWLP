@@ -3,63 +3,91 @@
     ViewBag.Title = "ShowOrderAssayInfo";
 
 }
-
-<h2>Order, Assay, and Compound Information</h2>
-<br />
-<br />
-
-<p>Order Number: @ViewBag.Order.orderId</p>
-<p>Customer ID: @ViewBag.Order.customerId</p>
-<p>Order Date: @ViewBag.Order.orderDate</p>
-<p>Customer Comments: @ViewBag.Order.customerComments</p>
-
-<b>@Html.ActionLink("Update Order Status", "Edit", "Orders", new { id = ViewBag.Order.orderId }, null)</b>
-
-
-<br />
-<br />
-
-
-<table class="table">
-    <tr>
-        <th>
-            Assay ID
-        </th>
-        <th>
-            Assay Type ID
-        </th>
-        <th>
-            LTNumber
-        </th>
-
-    </tr>
-
-    @foreach (var assay in ViewBag.Assays)
-    {
+<div class="crazyTable">
+    <h1>Order Information</h1>
+    <table class="ordersTable">
         <tr>
-            <td>
-                @assay.assayId
-            </td>
-            <td>
-                @assay.assayTypeId
-            </td>
-            <td>
-                @assay.LTNumber
-            </td>
-            <td>
-                @Html.ActionLink("Create Test for Assay", "Create", "Assay_Test", new { id = assay.assayId }, null)
-            </td>
+            <th>
+                Order Number
+            </th>
+            <th>
+                Customer ID
+            </th>
+            <th>
+                Order Date
+            </th>
+        </tr>
+        <tr>
+            <th>
+                @ViewBag.Order.orderId
+            </th>
+            <th>
+                @ViewBag.Order.customerId
+            </th>
+            <th>
+                @ViewBag.Order.orderDate
+            </th>
+        </tr>
+    </table>
+</div>
+
+<div class="crazyTable">
+    <h1>Customer Comments</h1>
+    <p>@ViewBag.Order.customerComments</p>
+</div>
+
+<div class="crazyTable">
+    <h1>Assay Information</h1>
+    <table class="ordersTable">
+        <tr>
+            <th>
+                Assay ID
+            </th>
+            <th>
+                Assay Type ID
+            </th>
+            <th>
+                LTNumber
+            </th>
+            <th>
+                Actions to take
+            </th>
 
         </tr>
-    }
-</table>
-<br />
-<br />
 
-<h4 style="color:red">Please update all necessary infomation upon receipt of order compounds</h4>
+        @foreach (var assay in ViewBag.Assays)
+        {
+            <tr>
+                <td>
+                    @assay.assayId
+                </td>
+                <td>
+                    @assay.assayTypeId
+                </td>
+                <td>
+                    @assay.LTNumber
+                </td>
+                <td>
+                    @Html.ActionLink("Create Test for Assay", "Create", "Assay_Test", new { id = assay.assayId, oid = ViewBag.Order.orderId }, null)
+                </td>
 
+            </tr>
+        }
+    </table>
+</div>
 
-<table class="table">
+<div class="alert-danger">
+    <br />
+    <h4 style="text-align:center;"><strong>Please update all necessary infomation upon receipt of order compounds</strong></h4>
+    <div style="text-align:center;">
+        <b>@Html.ActionLink("Update Order Status", "Edit", "Orders", new { id = ViewBag.Order.orderId }, new { @class = "btn btn-default"})</b>
+    </div>
+    <br />
+</div>
+
+<div class="crazyTable">
+    <h1>Record Compound Information</h1>
+<table class="ordersTable">
     <tr>
         <th>
             Compound Sample ID
@@ -96,6 +124,9 @@
         </th>
         <th>
            Max Tolerated Dose
+        </th>
+        <th>
+            Edit
         </th>
     </tr>
 
@@ -142,14 +173,16 @@
                 @compound.maxToleratedDose
             </td>
             <td>
-                @Html.ActionLink("Update", "Edit", "Compound_Sample", new { id = compound.compoundSampleId }, null) |
-                @Html.ActionLink("Delete", "Delete", "Compound_Sample", new { id = compound.compoundSampleId }, null)
+
+                @Html.ActionLink("Update", "Edit", "Compound_Sample", new { id = compound.compoundSampleId, oid = ViewBag.Order.orderId }, null) |
+                @Html.ActionLink("Delete", "Delete", "Compound_Sample", new { id = compound.compoundSampleId, oid = ViewBag.Order.orderId }, null)
             </td>
         </tr>
     }
 
 
 </table>
+</div>
 
 @Html.ActionLink("Return to Lab Portal", "Index", "Lab", null, null)
 @*@Html.ActionLink("Proceed to Create Test", "Create", "Assay_Test", null, null)*@
