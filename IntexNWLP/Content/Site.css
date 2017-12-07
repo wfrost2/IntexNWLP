@@ -196,6 +196,10 @@ label {
     font-family: 'Raleway', sans-serif;
 }
 
-.footerLinks {
-    text-align: left;
+.footerLink {
+    margin-right: 50px;
+}
+
+#footerLinks {
+    margin-bottom: 10px;
 }
