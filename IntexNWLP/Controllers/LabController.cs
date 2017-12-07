@@ -49,6 +49,7 @@ namespace IntexNWLP.Controllers
                     "WHERE Assay_Order.orderId = " + order.orderId + " AND Assay_Order.assayId = Assay.assayId " +
                     "AND Assay.LTNumber = Compound.LTNumber AND Compound.LTNumber = Compound_Sample.LTNumber");
 
+
                 TempData["assay"] = assay;
                 TempData["compounds"] = compoundsample;
                 TempData["order"] = order;
