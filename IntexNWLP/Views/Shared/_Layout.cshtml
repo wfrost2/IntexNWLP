@@ -57,12 +57,14 @@
         @RenderBody()
         <hr />
         <footer>
-            <a href="Managment/Index" class="footerLinks col-md-2" style="color:white">a</a>
-            <a href="Managment/Index" class="footerLinks col-md-2" style="color:white">a</a>
-            <a href="Managment/Index" class="footerLinks col-md-2" style="color:white">a</a>
-            <a href="Managment/Index" class="footerLinks col-md-2">Management Portal</a>
-            <a href="CustomerPortal/Index" class="footerLinks col-md-2">Customer Portal</a>
-            <a href="Lab/Index" class="footerLinks col-md-2">Lab Portal</a>
+            @if (Request.IsAuthenticated)
+            {
+                <div id="footerLinks">
+                    @Html.ActionLink("Management Portal", "Index", "Management", null, new { @class = "footerLink" })
+                    @Html.ActionLink("Customer Portal", "Index", "CustomerPortal", null, new { @class = "footerLink" })
+                    @Html.ActionLink("Lab Portal", "Index", "Lab", null, new { @class = "footerLink" })
+                </div>
+            }
             <p>&copy; @DateTime.Now.Year - Northwest Labs</p>
         </footer>
     </div>
