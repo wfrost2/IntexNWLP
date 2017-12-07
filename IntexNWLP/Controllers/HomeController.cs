@@ -60,11 +60,11 @@ namespace IntexNWLP.Controllers
             }
         }
 
-        public ActionResult LogOut()
+        public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
             Session.Abandon();
-            return RedirectToAction("Index", "Home");
+            return View();
         }
     }
 }
