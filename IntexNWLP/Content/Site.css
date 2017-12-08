@@ -60,12 +60,9 @@ textarea {
     text-align: center;
 }
 
-.portalButton > a {
+.portalButton {
     color: #F9F6EF;
     text-decoration: none;
-}
-
-.portalButton {
     padding: 80px;
     margin: 55px;
     background-color: #0F233C;
