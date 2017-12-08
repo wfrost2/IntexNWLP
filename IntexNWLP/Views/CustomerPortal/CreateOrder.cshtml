@@ -54,19 +54,26 @@
 
             <div class="">
                 <p>Would you like to run all conditional tests, regardless of if they are necessary? (check box to confirm "yes")<span>*</span></p>
-                <input type="checkbox" class="" name="runConditionals" />
+                <div style="width: 35px">
+                    <input type="checkbox" class="" name="runConditionals" />
+                </div>
             </div>
         </div>
 
         <div class="rightcontact">
 
             <div class="form-group">
-                <p><strong>Select Assays:</strong><span>*</span></p>
-                @foreach (var item in Model)
-                {
-                    <p>@Html.DisplayFor(modelItem => item.assayName)</p>
-                    <input type="checkbox" class="" name="assay-@item.assayTypeId"/><br />
-                }
+                <strong>Select Assays:</strong><span>*</span>
+                <br />
+                    @foreach (var item in Model)
+                    {
+                        <div class="row">
+                            <div class="col-md-10 text-left">
+                                @Html.DisplayFor(modelItem => item.assayName) <div style="width: 35px">@Html.CheckBox("assay-" + item.assayTypeId)</div>
+                            </div>
+                        </div>
+                       
+                    }
 
             </div>
 

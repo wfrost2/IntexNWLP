@@ -40,7 +40,7 @@ namespace IntexNWLP.Controllers
             String username = form["Username"].ToString();
             String password = form["Password"].ToString();
 
-            if (string.Equals(username, "Wyatt") && (string.Equals(password, "Frost")))
+            if (string.Equals(username, "Michael Scott") && (string.Equals(password, "Scott")))
             {
                 FormsAuthentication.SetAuthCookie(username, rememberMe);
 

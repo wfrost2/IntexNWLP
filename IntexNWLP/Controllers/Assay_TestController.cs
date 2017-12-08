@@ -59,6 +59,8 @@ namespace IntexNWLP.Controllers
             if (ModelState.IsValid)
             {
                 int oid1 = Convert.ToInt32(TempData["oid"]);
+
+                ViewBag.id = TempData["id"];
                 assay_Test.assayId = ViewBag.id;
                 
                 
