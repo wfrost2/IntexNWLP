@@ -44,7 +44,7 @@
                 Assay ID
             </th>
             <th>
-                Assay Type ID
+                Assay Type
             </th>
             <th>
                 LTNumber
@@ -61,9 +61,25 @@
                 <td>
                     @assay.assayId
                 </td>
-                <td>
-                    @assay.assayTypeId
-                </td>
+                @if (assay.assayTypeId == 1)
+                {
+                    <td>
+                        DNA Footprinting
+                    </td>
+                }
+                @if (assay.assayTypeId == 2)
+                {
+                    <td>
+                        Ribosome Profiling
+                    </td>
+                }
+                @if (assay.assayTypeId == 3)
+                {
+                    <td>
+                        Crude Oil
+                    </td>
+                }
+
                 <td>
                     @assay.LTNumber
                 </td>
