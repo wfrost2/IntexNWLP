@@ -60,7 +60,6 @@ textarea {
     text-align: center;
 }
 
-
 .portalButton {
     padding: 80px;
     margin: 55px;
@@ -161,10 +160,10 @@ textarea {
     font-size: 18px;
 }
 
-    .button-submit:hover {
-        background-color: #77818B;
-        color: #0F233C;
-    }
+.button-submit:hover {
+    background-color: #77818B;
+    color: #0F233C;
+}
 
 .leftcontact {
     width: 49.5%;
@@ -211,26 +210,26 @@ textarea {
     width: 100%;
 }
 
-    .ordersTable td, .ordersTable th {
-        border: 1px solid #77818B;
-    }
+.ordersTable td, .ordersTable th {
+    border: 1px solid #77818B;
+}
 
-    .ordersTable tr:nth-child(even) {
-        background-color: #F0F8FF;
-    }
+.ordersTable tr:nth-child(even) {
+    background-color: #F0F8FF;
+}
 
-    .ordersTable tr:hover {
-        background-color: #DCDCDC;
-        color: #081525;
-    }
+.ordersTable tr:hover {
+    background-color: #DCDCDC;
+    color: #081525;
+}
 
-    .ordersTable th {
-        /*padding-top: 12px;
-        padding-bottom: 12px;*/
-        text-align: left;
-        background-color: #77818B;
-        color: white;
-    }
+.ordersTable th {
+    /*padding-top: 12px;
+    padding-bottom: 12px;*/
+    text-align: left;
+    background-color: #77818B;
+    color: white;
+}
 
 .crazyTable {
     border-radius: 5px;
@@ -251,6 +250,14 @@ textarea {
     margin: auto;
     text-shadow: none;
     text-align: center;
+}
+
+.footerLink {
+    margin-right: 30px;
+}
+
+#footerLinks {
+    margin-bottom: 9px;
 }
 
 
